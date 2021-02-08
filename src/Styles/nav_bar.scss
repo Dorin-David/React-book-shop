@@ -1,0 +1,76 @@
+@import 'mixins';
+@import 'colors';
+
+
+* {
+    box-sizing: border-box;
+    font-size: 10px;
+    margin: 0;
+}
+
+.nav-container {
+    @include build-box(100%, 60px, $shaded-purple, 0, 3px 5px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    @include flex();
+    justify-content: flex-end;
+    a {
+        @include font(link);
+    }
+    a:hover {
+        cursor: pointer;
+        color: $oranged-yellow;
+    }
+    input {
+        font-family: 'Roboto Mono';
+        font-size: 1.3em;
+        width: 15%;
+        padding: 7px;
+        border-radius: 5px;
+    }
+    #search{
+        width: 200px;
+        height: 60%;        
+        input{
+            width: 80%;
+            height: 100%;
+            border: none;
+            color: $shaded-purple;
+            font-size: 1.4em;
+        }
+        button {
+            width: 20%;
+            height: 100%;
+            border: none;
+            border-radius: 5px;
+            background: inherit;
+            i {
+                font-size: 1.5em;
+                color: white;
+            }
+        }
+        button:hover {
+            i {
+                color: $oranged-yellow;
+            }
+            background: #52303a;
+            cursor: pointer;
+        }
+
+    }
+    #cart {
+        display: inline-block;
+        font-size: 2.4em;
+        margin-right: 20px;
+        margin-left: 10px;
+        opacity: .9;
+        color: $oranged-yellow;
+    }
+    #cart:hover {
+        cursor: pointer;
+        opacity: 1;
+    }
+}

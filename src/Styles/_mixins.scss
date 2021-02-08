@@ -1,0 +1,41 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+//mixin for fonts
+@mixin font($type, $size:inherit, $color:inherit){
+    font-family: 'Noto Sans', sans-serif, serif, monospace;
+    @if $type == 'link' {
+        text-decoration: none;
+        font-size: 2.0em;
+        display: block;
+        background: inherit;
+        margin: 3%;
+        color: white;
+    }
+    @if $type == 'header' {
+        text-align: center;
+        font-size: 3.2em;
+        font-size: $size;
+        color: $color;
+    }
+    @if $type == 'paragraph' {
+        font-size: 2em;
+        line-height: 1.5;
+        color: $color;
+    }
+}
+//build box
+@mixin build-box($width, $height:auto, $color:initial, $margin: initial, $padding: initial){
+    width: $width;
+    height: $height;
+    background: $color;
+    margin: $margin;
+    padding: $padding;
+    
+}
+
+//default-flex 
+@mixin flex(){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
