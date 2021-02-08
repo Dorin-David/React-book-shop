@@ -21,12 +21,12 @@ class Main extends React.Component {
        
         let displayCatalog = this.props.catalog.map(element => {
             let price = element.price;
-            //check if the product is elegible for a discount
             if(elegiblesForDiscount.includes(element.title)){
                 price = Math.round(price - ((price / 100) * currentDiscount));
                 price = <p key={price}><span className='discountedPrice' key={element.year / price}>{element.price}</span> {price}$ 
                 <i className="fas fa-plus-square" id='add-btn-main' title='add to cart' onClick={this.props.onClick.bind(this, element.title)}/></p>;
                 }  
+                
           let card = <div key={`${element.author}_${element.year}`} className={this.state.display === 'normal' ? 'card' : 'card large'}> 
                 <img src={element.img} alt={element.title} key={element.img.match(/.{5}(?=.jpg)/)[0]} 
                 onClick={this.props.showDescription.bind(this, element)} title='view description'/> 

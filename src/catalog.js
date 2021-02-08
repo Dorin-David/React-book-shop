@@ -31,4 +31,3 @@ let catalog = [
 ]
 
 export  {currentDiscount, elegiblesForDiscount, catalog, productDescription}
-

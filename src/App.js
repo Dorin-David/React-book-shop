@@ -4,7 +4,7 @@ import Main from './Components/Main';
 import Cart from './Components/Cart';
 import Description from './Components/Description';
 import {catalog} from './catalog';
-
+import {displayRandomMessage} from './utilities'
 
 class App extends React.Component {
     constructor(props){
@@ -87,15 +87,15 @@ class App extends React.Component {
 
     render(){
        //create function to display random message
-       let messages = ['Wow!', 'Great choice!', 'Devour it!', ':)', 'Good one!', 'Share it!', "Love it!"];
-       let randomMessage = messages[Math.floor(Math.random() * messages.length)];
-       let displayAddedMessage = <div className="alert">{randomMessage}</div>;
+      //  let messages = ['Wow!', 'Great choice!', 'Devour it!', ':)', 'Good one!', 'Share it!', "Love it!"];
+      //  let randomMessage = messages[Math.floor(Math.random() * messages.length)];
+      //  let displayAddedMessage = <div className="alert">{randomMessage}</div>;
       return (
         <div className='wrapper'>
       <NavBar firstLink='Home' secondLink='About' onClick={this.toggleCart} handleSearch={this.searchItem} /> 
       <Main catalog={this.state.currentItems} onClick={this.addToCart} showDescription={this.showDescription}/>
       {this.state.toggleCart ? <Cart cart={this.state.cart} catalog={catalog} onClick={this.toggleCart} btnClick={this.adjustQuantity} showDescription={this.showDescription}/> : null}
-      {this.state.showMessage ? displayAddedMessage : null}
+      {this.state.showMessage ? displayRandomMessage() : null}
       {this.state.showDescription ? <Description displayObject={this.state.currentDisplayObject} onClick={this.closeDescription} /> : null}
     </div>
       )
