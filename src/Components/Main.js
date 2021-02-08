@@ -1,6 +1,6 @@
 import React from 'react';
 import '../Styles/main.css';
-import {currentDiscount, elegiblesForDiscount, catalog} from '../catalog'
+import {currentDiscount, elegiblesForDiscount} from '../catalog'
 
 class Main extends React.Component {
     constructor(props){
@@ -27,7 +27,7 @@ class Main extends React.Component {
                 price = <p key={price}><span className='discountedPrice' key={element.year / price}>{element.price}</span> {price}$ 
                 <i className="fas fa-plus-square" id='add-btn-main' title='add to cart' onClick={this.props.onClick.bind(this, element.title)}/></p>;
                 }  
-          let card = <div key={`${element.author}_${element.year}`} className={this.state.display == 'normal' ? 'card' : 'card large'}> 
+          let card = <div key={`${element.author}_${element.year}`} className={this.state.display === 'normal' ? 'card' : 'card large'}> 
                 <img src={element.img} alt={element.title} key={element.img.match(/.{5}(?=.jpg)/)[0]} 
                 onClick={this.props.showDescription.bind(this, element)} title='view description'/> 
                 <h2 key={element.title}>{element.title}</h2>

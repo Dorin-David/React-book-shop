@@ -21,8 +21,8 @@ class Cart extends React.Component{
    render(){
     let totalDue = 0;
     let inCartItems = Array.from(new Set(this.props.cart)).map(element => { 
-     let currentElement = this.props.catalog.find(item => item.title == element);
-     let numberOfItems = this.props.cart.filter(el => el == element).length;
+     let currentElement = this.props.catalog.find(item => item.title === element);
+     let numberOfItems = this.props.cart.filter(el => el === element).length;
      let price = currentElement.price;
      if(elegiblesForDiscount.includes(element)) {price = Math.round(price - ((price / 100) * currentDiscount))}
      totalDue += (price * numberOfItems);
