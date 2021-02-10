@@ -1,10 +1,11 @@
 import React from 'react';
 import NavBar from './Components/NavBar';
-import Main from './Components/Main';
+import {Main} from './Components/Main';
 import Cart from './Components/Cart';
 import Description from './Components/Description';
 import {catalog} from './catalog';
 import {displayRandomMessage} from './utilities'
+
 
 class App extends React.Component {
     constructor(props){
@@ -33,7 +34,6 @@ class App extends React.Component {
       }))
       if(this.state.showMessage === true) return
       this.setState(state => ({
-        // cart: [...state.cart, element],
         showMessage: !state.showMessage
       }))
        setTimeout(() => this.setState(state => ({ 
@@ -86,10 +86,6 @@ class App extends React.Component {
       }
 
     render(){
-       //create function to display random message
-      //  let messages = ['Wow!', 'Great choice!', 'Devour it!', ':)', 'Good one!', 'Share it!', "Love it!"];
-      //  let randomMessage = messages[Math.floor(Math.random() * messages.length)];
-      //  let displayAddedMessage = <div className="alert">{randomMessage}</div>;
       return (
         <div className='wrapper'>
       <NavBar firstLink='Home' secondLink='About' onClick={this.toggleCart} handleSearch={this.searchItem} /> 

@@ -1,7 +1,4 @@
-let currentDiscount = Math.floor(Math.random() * 20) <= 10 ? 10 : 20; //mock current discount, random between 10% and 20%
-let elegiblesForDiscount = ['Tropic of Cancer', 'Lolita']; //mock current list of discounted books
-
-
+//Currently the below objects are hard-coded; soon we'll integrate Node.js with the application
 let productDescription = {
   'Demons': `First published in the journal The Russian Messenger in 1871–72, Demons it is considered one of the four masterworks written by Dostoevsky after his return from Siberian exile, along with Crime and Punishment (1866), The Idiot (1869) 
              and The Brothers Karamazov (1880). Demons is a social and political satire, a psychological drama, and large-scale tragedy.`,
@@ -30,4 +27,4 @@ let catalog = [
 //
 ]
 
-export  {currentDiscount, elegiblesForDiscount, catalog, productDescription}
+export  {catalog, productDescription}

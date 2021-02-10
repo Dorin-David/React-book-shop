@@ -8,8 +8,7 @@ function displayRandomMessage(){
        return displayAddedMessage
 }
 
-//This function iterates over an array of objects / object and returns an array of the desired keys (could be multiple)
-
+//This function iterates over an array of objects / object and returns an array of the desired keys 
 function getProperties(targetObject, ...targetProps){
     let props = [];
         targetObject.forEach(item => {
@@ -32,23 +31,13 @@ function getRandomElements(array, n = 3){
  }
 
  //This function check if an element is elegible for discount and, if so, apllies the discount
+function getDiscount(list, target, price, currDiscount, event){
+    let copy  = price;
+    let button = <i className="fas fa-plus-square" id='add-btn-main' title='add to cart' onClick={event}/>;
+    if(list.includes(target)){   
+        copy = <p><span className='discountedPrice'>{price}</span>{Math.round(price - ((price / 100) * currDiscount))}${button}</p>;  
+    }
+    return typeof copy === 'object' ? copy : <p>{copy}${button}</p>
+}
 
-
-
-//  if(elegiblesForDiscount.includes(element.title)){
-//     price = Math.round(price - ((price / 100) * currentDiscount));
-//     price = <p key={price}><span className='discountedPrice' key={element.year / price}>{element.price}</span> {price}$ 
-//     <i className="fas fa-plus-square" id='add-btn-main' title='add to cart' onClick={this.props.onClick.bind(this, element.title)}/></p>;
-//     }  
-//     {typeof price == 'object' ? price : <p key={price}>{price}$ <i className="fas fa-plus-square" id='add-btn-main' title='add to cart' 
-//     onClick={this.props.onClick.bind(this, element.title)}/></p>}
- 
-    function getDiscount(list, target, currentDiscount){
-       let copy  = target;
-       if(list.includes(copy)){
-           copy = Math.round(copy - ((copy / 100) * currentDiscount));  
-       }
-       return copy
- }
-
-export {displayRandomMessage, getProperties, getRandomElements}
+export {displayRandomMessage, getProperties, getRandomElements, getDiscount}

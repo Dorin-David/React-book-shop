@@ -8,12 +8,10 @@ const NavBar = (props) => {
            <a href="#">{props.secondLink}</a>
            <div id='search'>
                <input type='text' placeholder='search book/author' onChange={props.handleSearch} value={props.value}/>
-               <button type="submit"><i class="fas fa-search" onClick={props.handleSearch} title='search'></i></button></div>
-               <i class="fas fa-shopping-cart" id='cart' onClick={props.onClick} title='open cart'></i>
-       </div>
-        
+               <button type="submit"><i className="fas fa-search" onClick={props.handleSearch} title='search'></i></button></div>
+               <i className="fas fa-shopping-cart" id='cart' onClick={props.onClick} title='open cart'></i>
+       </div>    
    )
-
 }
 
 export default NavBar
