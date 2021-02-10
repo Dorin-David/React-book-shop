@@ -1,6 +1,6 @@
 import React from 'react';
 import '../Styles/cart.css';
-import {currentDiscount, elegiblesForDiscount} from '../catalog';
+import {currentDiscount, currentDiscountedElements} from './Main';
 
 
 class Cart extends React.Component{
@@ -21,10 +21,10 @@ class Cart extends React.Component{
    render(){
     let totalDue = 0;
     let inCartItems = Array.from(new Set(this.props.cart)).map(element => { 
-     let currentElement = this.props.catalog.find(item => item.title == element);
-     let numberOfItems = this.props.cart.filter(el => el == element).length;
+     let currentElement = this.props.catalog.find(item => item.title === element);
+     let numberOfItems = this.props.cart.filter(el => el === element).length;
      let price = currentElement.price;
-     if(elegiblesForDiscount.includes(element)) {price = Math.round(price - ((price / 100) * currentDiscount))}
+     if(currentDiscountedElements.includes(element)) {price = Math.round(price - ((price / 100) * currentDiscount))}
      totalDue += (price * numberOfItems);
     
       return (
@@ -50,9 +50,8 @@ class Cart extends React.Component{
     })
     let productsAndTotal = <div style={{width: '100%', height: '100%'}}>{inCartItems} <p id='totalDue'><span>Total: </span>{`${totalDue.toFixed(2)}`}$</p></div>
     return (
-     <div id='cart-box-wrapper' className={this.state.fullPage ? 'full-view' : 'normal-view'} > {/* here is the logic for full/normal view */} 
+     <div id='cart-box-wrapper' className={this.state.fullPage ? 'full-view' : 'normal-view'} >
          <div className='btn-wrapper'>
-         {/*buttons for increasing/decreasing cart size and for closing it */}
          <i className="far fa-square" id='full-btn' onClick={this.fullView} title='expand cart'></i>
          <i className="fas fa-window-close"  id='close-btn' onClick={this.props.onClick} title='close cart'></i>
          </div>

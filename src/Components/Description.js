@@ -1,5 +1,4 @@
 import React from 'react';
-import {productDescription} from '../catalog'
 import '../Styles/description.css';
 
 function Description(props){
