@@ -1,7 +1,8 @@
 import React from 'react';
 import './Main.css';
-import {catalog} from '../../utilities/catalog'
-import {getProperties, getRandomElements, getDiscount} from '../../utilities/utilities'
+import {catalog} from '../../utilities/catalog';
+import {getProperties, getRandomElements, getDiscount} from '../../utilities/utilities';
+import {FaTh, FaThLarge} from 'react-icons/fa'
 
 let currentDiscountedElements = getRandomElements(getProperties(catalog, 'title'));
 let currentDiscount = Math.floor(Math.random() * 20) <= 10 ? 10 : 20
@@ -38,9 +39,9 @@ class Main extends React.Component {
                  <h2>Explore our range of books</h2>
                  </div>
                  <div id='books-container' >
-                 <div className='display-wrapper'>
-                   <i className="fas fa-th" id='normal-display' onClick={this.displayProducts.bind(this, 'normal')} title='default display'></i>
-                  <i className="fas fa-th-large" id='large-display' onClick={this.displayProducts.bind(this, 'large')} title='large display'></i>
+                 <div className='display-wrapper'>   
+                   <FaTh id='normal-display' onClick={this.displayProducts.bind(this, 'normal')} title='default display'/> 
+                   <FaThLarge id='large-display' onClick={this.displayProducts.bind(this, 'large')} title='large display'/>
                  </div>
                  {displayCatalog}
                  </div>
