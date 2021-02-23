@@ -1,6 +1,6 @@
 import React from 'react';
-import '../Styles/cart.css';
-import {currentDiscount, currentDiscountedElements} from './Main';
+import './Cart.css';
+import {currentDiscount, currentDiscountedElements} from '../Main/Main';
 
 
 class Cart extends React.Component{
