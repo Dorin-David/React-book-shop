@@ -75,9 +75,11 @@
   background: inherit;
 }
 
-.nav-container #search button i {
-  font-size: 1.5em;
+.nav-container #search button .search-icon, .nav-container #search button i {
+  font-size: 1.5rem;
   color: white;
+  display: inline-block;
+  vertical-align: bottom;
 }
 
 .nav-container #search button:hover {
@@ -85,13 +87,13 @@
   cursor: pointer;
 }
 
-.nav-container #search button:hover i {
+.nav-container #search button:hover .search-icon, .nav-container #search button:hover i {
   color: #FFA100;
 }
 
 .nav-container #cart {
   display: inline-block;
-  font-size: 2.4em;
+  font-size: 2.8em;
   margin-right: 20px;
   margin-left: 10px;
   opacity: .9;
@@ -102,4 +104,4 @@
   cursor: pointer;
   opacity: 1;
 }
-/*# sourceMappingURL=nav_bar.css.map */
+/*# sourceMappingURL=NavBar.css.map */

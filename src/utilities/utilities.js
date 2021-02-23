@@ -1,4 +1,6 @@
-import React from 'react'
+import React from 'react';
+import {FaPlusSquare} from 'react-icons/fa';
+
 
 //This function provides the random message shown when the user adds something to the cart
 function displayRandomMessage(){
@@ -33,7 +35,7 @@ function getRandomElements(array, n = 3){
  //This function check if an element is elegible for discount and, if so, apllies the discount
 function getDiscount(list, target, price, currDiscount, event){
     let copy  = price;
-    let button = <i className="fas fa-plus-square" id='add-btn-main' title='add to cart' onClick={event}/>;
+    let button = <FaPlusSquare id='add-btn-main' title='add to cart' onClick={event} style={{verticalAlign: 'bottom'}}/>;
     if(list.includes(target)){   
         copy = <p><span className='discountedPrice'>{price}</span>{Math.round(price - ((price / 100) * currDiscount))}${button}</p>;  
     }

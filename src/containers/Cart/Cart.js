@@ -1,6 +1,8 @@
 import React from 'react';
-import '../Styles/cart.css';
-import {currentDiscount, currentDiscountedElements} from './Main';
+import './Cart.css';
+import {currentDiscount, currentDiscountedElements} from '../Main/Main';
+import {FaPlusSquare, FaMinusSquare, FaTrashAlt, FaWindowClose} from 'react-icons/fa';
+import {BiWindow} from 'react-icons/bi';
 
 
 class Cart extends React.Component{
@@ -33,15 +35,15 @@ class Cart extends React.Component{
             <img key = {currentElement.img.match(/.{5}(?=.jpg)/)[0]} src={currentElement.img} alt={currentElement.title}
             onClick={this.props.showDescription.bind(this, currentElement)} title='view description'
             />
-            <div className='card-description' key={currentElement.title + currentElement.author}> {/*need key here */}
+            <div className='card-description' key={currentElement.title + currentElement.author}> 
             <h1 key={currentElement.title}>{currentElement.title}</h1>
             <h2 key={currentElement.author}>{ currentElement.author}</h2>
             </div>
              
              <div className='buttons-wrapper' key={currentElement.price + currentElement.author}>
-            <i className="fas fa-plus-square cart-btn" id='increase-btn' key='increase-btn'onClick={this.props.btnClick.bind(this, 'add', currentElement.title)} title='increase qty'></i>
-            <i className="fas fa-minus-square cart-btn" id='decrease-btn' key='decrease-btn' onClick={this.props.btnClick.bind(this, 'remove', currentElement.title)} title='decrease qty'></i>
-            <i className="fas fa-trash-alt cart-btn" id='remove-btn' key='remove-btn' onClick={this.props.btnClick.bind(this, 'delete', currentElement.title)} title='remove from cart'></i>
+            <FaPlusSquare className='cart-btn' id='increase-btn' key='increase-btn'onClick={this.props.btnClick.bind(this, 'add', currentElement.title)} title='increase qty' />
+            <FaMinusSquare className="cart-btn" id='decrease-btn' key='decrease-btn' onClick={this.props.btnClick.bind(this, 'remove', currentElement.title)} title='decrease qty'/>
+            <FaTrashAlt className="cart-btn" id='remove-btn' key='remove-btn' onClick={this.props.btnClick.bind(this, 'delete', currentElement.title)} title='remove from cart'/>
             <p key={price}>{` x ${numberOfItems} -   ${(price * numberOfItems).toFixed(2)}$`}</p>
             </div>
             
@@ -52,8 +54,8 @@ class Cart extends React.Component{
     return (
      <div id='cart-box-wrapper' className={this.state.fullPage ? 'full-view' : 'normal-view'} >
          <div className='btn-wrapper'>
-         <i className="far fa-square" id='full-btn' onClick={this.fullView} title='expand cart'></i>
-         <i className="fas fa-window-close"  id='close-btn' onClick={this.props.onClick} title='close cart'></i>
+         <BiWindow id='full-btn' onClick={this.fullView} title='expand cart' />
+         <FaWindowClose id='close-btn' onClick={this.props.onClick} title='close cart' />
          </div>
      <div id='inner-cart-box'>
        {totalDue ? productsAndTotal : <p id='empty-cart-message'>You have currently no items in the cart</p>}
