@@ -89,7 +89,7 @@ class App extends React.Component {
     return (
       <div className='wrapper'>
         <NavBar firstLink='Home' secondLink='About' onClick={this.toggleCart} handleSearch={this.searchItem} />
-        <Main catalog={this.state.currentItems} onClick={this.addToCart} showDescription={this.showDescription} />
+        <Main catalog={this.state.currentItems} click={this.addToCart} showDescription={this.showDescription} />
         {this.state.toggleCart ? <Cart cart={this.state.cart} catalog={catalog} onClick={this.toggleCart} btnClick={this.adjustQuantity} showDescription={this.showDescription} /> : null}
         {this.state.showMessage ? displayRandomMessage() : null}
         {this.state.showDescription ? <Description displayObject={this.state.currentDisplayObject} onClick={this.closeDescription} /> : null}
