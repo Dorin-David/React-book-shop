@@ -20,9 +20,8 @@ class App extends React.Component {
       currentItems: catalog
 
     }
-    this.addToCart = this.addToCart.bind(this);
     this.toggleCart = this.toggleCart.bind(this);
-    this.adjustQuantity = this.adjustQuantity.bind(this);
+    this.addToCart = this.addToCart.bind(this);
     this.showDescription = this.showDescription.bind(this);
     this.closeDescription = this.closeDescription.bind(this);
     this.searchItem = this.searchItem.bind(this);
@@ -45,26 +44,6 @@ class App extends React.Component {
     this.setState(state => ({
       toggleCart: !state.toggleCart
     }))
-  }
-
-  adjustQuantity(key, target) {
-    if (key === 'add') {
-      return this.setState(state => ({
-        cart: [...state.cart, target]
-      }));
-    }
-    if (key === 'remove') {
-      let shallowCopy = Array.from(this.state.cart).filter((element, index, arr) => index !== arr.lastIndexOf(target))
-      return this.setState(state => ({
-        cart: shallowCopy
-      }))
-    }
-
-    if (key === 'delete') {
-      return this.setState(state => ({
-        cart: [...state.cart.filter(el => el !== target)]
-      }))
-    }
   }
 
   showDescription(target) {
@@ -90,7 +69,7 @@ class App extends React.Component {
       <div className='wrapper'>
         <NavBar firstLink='Home' secondLink='About' onClick={this.toggleCart} handleSearch={this.searchItem} />
         <Main catalog={this.state.currentItems} click={this.addToCart} showDescription={this.showDescription} />
-        {this.state.toggleCart ? <Cart cart={this.state.cart} catalog={catalog} onClick={this.toggleCart} btnClick={this.adjustQuantity} showDescription={this.showDescription} /> : null}
+        {this.state.toggleCart ? <Cart clickToggle={this.toggleCart}  showDescription={this.showDescription} cart={this.state.cart}/> : null}
         {this.state.showMessage ? displayRandomMessage() : null}
         {this.state.showDescription ? <Description displayObject={this.state.currentDisplayObject} onClick={this.closeDescription} /> : null}
       </div>
