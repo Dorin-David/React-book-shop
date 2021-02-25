@@ -1,20 +1,6 @@
 import React from 'react';
 import {catalog} from '../../utilities/catalog';
 import {getProperties, getRandomElements, getDiscount} from '../../utilities/utilities';
-/*
-let displayCatalog = this.props.catalog.map(element => {
-          let card = <div key={`${element.author}_${element.year}`} className={this.state.display === 'normal' ? 'card' : 'card large'}> 
-                <img src={element.img} alt={element.title} key={element.img.match(/.{5}(?=.jpg)/)[0]} 
-                onClick={this.props.showDescription.bind(this, element)} title='view description'/> 
-                <h2 key={element.title}>{element.title}</h2>
-                <h3 key={element.author}>{element.author}</h3>              
-               <div key={element.price + element.title}>
-               {getDiscount(currentDiscountedElements, element.title, element.price, currentDiscount, 
-                this.props.onClick.bind(this, element.title))}</div>
-            </div>    
-            return card
-        }) 
-*/
 
 let currentDiscountedElements = getRandomElements(getProperties(catalog, 'title'));
 let currentDiscount = Math.floor(Math.random() * 20) <= 10 ? 10 : 20
