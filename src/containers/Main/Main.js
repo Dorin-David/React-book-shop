@@ -34,7 +34,7 @@ class Main extends React.Component {
                         click={this.props.click}
                     />
                 </div>
-            </div>
+            </div> 
         )
     }
 }
