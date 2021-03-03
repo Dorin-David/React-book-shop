@@ -128,6 +128,7 @@ body {
 }
 
 .main-container #books-container .card .discountedPrice {
+  font-family: 'Noto Sans', sans-serif, serif, monospace;
   font-size: 1.7rem;
   text-decoration: line-through;
   color: rgba(1, 1, 1, 0.8);
@@ -214,4 +215,4 @@ body {
   font-size: 2.4rem;
   font-weight: bold;
 }
-/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=Main.css.map */
