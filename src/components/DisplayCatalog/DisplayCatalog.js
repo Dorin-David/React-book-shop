@@ -6,7 +6,7 @@ let currentDiscountedElements = getRandomElements(getProperties(catalog, 'title'
 let currentDiscount = Math.floor(Math.random() * 20) <= 10 ? 10 : 20
 
 const DisplayCatalog = props => (
-    catalog.map(element => (
+    props.catalog.map(element => (
         <div key={`${element.author}_${element.year}`} className={props.display === 'normal' ? 'card' : 'card large'}> {/* pass display prop */}
                 <img src={element.img} alt={element.title} key={element.img.match(/.{5}(?=.jpg)/)[0]} 
                 onClick={props.showDescription.bind(this, element)} title='view description'/>  {/* pass showDescription function */}

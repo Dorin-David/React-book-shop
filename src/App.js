@@ -55,9 +55,9 @@ class App extends React.Component {
   closeDescription() {
     this.setState(() => ({ showDescription: false }))
   }
-  searchItem = (e) => {
+  searchItem(e) {
     let value = e.target.value;
-    let regex = new RegExp(`${value}`, 'i')
+    let regex = new RegExp(`${value}`, 'i');
     if (value === '') { return this.setState(state => ({ currentItems: catalog })) }
     this.setState(state => ({
       currentItems: [...state.currentItems.filter(element => regex.test(element.title) || regex.test(element.author))]

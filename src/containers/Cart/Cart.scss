@@ -1,12 +1,11 @@
 @import '../../style/mixins';
 @import '../../style/colors';
 
-//test with bigger size of Cart
 #cart-box-wrapper.full-view {
   width: 90%;
   height: 80%;
 }
-//end test
+
 
 #cart-box-wrapper {
   @include build-box(90%, 60vh, white, 10px auto,);

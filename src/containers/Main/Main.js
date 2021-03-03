@@ -17,6 +17,7 @@ class Main extends React.Component {
     }
 
     render() {
+
         return (
             <div class='main-container'>
                 <div className='description-container'>
@@ -32,6 +33,7 @@ class Main extends React.Component {
                         display={this.state.display}
                         showDescription={this.props.showDescription}
                         click={this.props.click}
+                        catalog={this.props.catalog}
                     />
                 </div>
             </div> 

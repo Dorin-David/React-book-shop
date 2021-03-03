@@ -74,9 +74,7 @@ body {
             }
 
             .discountedPrice {
-                font-size: 1.7rem;
-                text-decoration: line-through;
-                color: rgba(1,1,1, 0.8);
+                @include font(discountedPrice);
             }
             #add-btn-main {
                 margin-left: 10px;
