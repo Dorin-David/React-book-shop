@@ -13,9 +13,9 @@ const card = props => (
         />
         <div className='buttons-wrapper'>
             <CardButtons
-                add={props.adjustQuantity.bind(null, 'add', props.targetElement.title)}
-                remove={props.adjustQuantity.bind(null, 'remove', props.targetElement.title)}
-                delete={props.adjustQuantity.bind(null, 'delete', props.targetElement.title)}
+                add={props.adjustQuantity.bind(this, 'add', props.targetElement.title)}
+                remove={props.adjustQuantity.bind(this, 'remove', props.targetElement.title)}
+                delete={props.adjustQuantity.bind(this, 'delete', props.targetElement.title)}
             />
             <p>{` x ${props.numberOfItems} -   ${(props.price * props.numberOfItems).toFixed(2)}$`}</p>
         </div>

@@ -32,23 +32,23 @@
         border-radius: 5px;
     }
     #search{
-        width: 200px;
-        height: 60%;        
+        width: 400px;
+        height: 70%;     
         input{
             width: 80%;
             height: 100%;
             border: none;
             color: $shaded-purple;
-            font-size: 1.4em;
+            font-size: 1.6em;
         }
         button {
-            width: 20%;
+            width: 10%;
             height: 100%;
             border: none;
             border-radius: 5px;
             background: inherit;
             .search-icon, i {
-                font-size: 1.5rem;
+                font-size: 1.7rem;
                 color: white;
                 display: inline-block;
                 vertical-align: bottom;
@@ -64,12 +64,13 @@
 
     }
     #cart {
-        display: inline-block;
-        font-size: 2.8em;
+        font-size: 3.4em;
         margin-right: 20px;
         margin-left: 10px;
         opacity: .9;
         color: $oranged-yellow;
+        position: absolute;
+        right: 10px;
     }
     #cart:hover {
         cursor: pointer;
