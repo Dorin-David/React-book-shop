@@ -16,8 +16,8 @@ class App extends React.Component {
       cartFullPage: false,
       showMessage: false,
       showDescription: false,
+      productsDisplay: 'normal',
       currentDisplayObject: '',
-      currentSearch: '',
       currentItems: catalog
 
     }
@@ -42,7 +42,7 @@ class App extends React.Component {
     })), 1500);
   }
 
-  adjustQuantity(key, target) {
+  adjustQuantity = (key, target) => {
     if (key === 'add') {
       return this.setState(state => ({
         cart: [...state.cart, target]
@@ -82,6 +82,13 @@ class App extends React.Component {
   closeDescription() {
     this.setState(() => ({ showDescription: false }))
   }
+
+  handleProductsDisplay = size => {
+    this.setState(() => ({
+      productsDisplay: size
+  }))
+  }
+
   searchItem(e) {
     let value = e.target.value;
     let regex = new RegExp(`${value}`, 'i');
@@ -94,8 +101,13 @@ class App extends React.Component {
   render() {
     return (
       <div className='wrapper'>
-        <NavBar firstLink='Home' secondLink='About' onClick={this.toggleCart} handleSearch={this.searchItem} />
-        <Main catalog={this.state.currentItems} click={this.addToCart} showDescription={this.showDescription} />
+        <NavBar onClick={this.toggleCart} handleSearch={this.searchItem} />
+        <Main 
+        catalog={this.state.currentItems} 
+        click={this.addToCart} 
+        display={this.state.productsDisplay}
+        displayProducts={this.handleProductsDisplay}
+        showDescription={this.showDescription} />
         {this.state.toggleCart ? <Cart 
                                  clickToggle={this.toggleCart}  
                                  showDescription={this.showDescription} 
