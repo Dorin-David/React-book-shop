@@ -2,11 +2,30 @@ import React from 'react';
 import {FaPlusSquare} from 'react-icons/fa';
 
 
+let randomMessageStyle = {
+    width: "180px",
+    height: "auto",
+    position: "fixed",
+    top: "60px",
+    left: "0",
+    right: "0",
+    margin: "auto",
+    padding: "10px",
+    fontSize: '2.4rem',
+    fontWeight: 'bold',
+    textAlign: 'center',
+    backgroundColor: "#dff0d8",
+    border: "1px solid #d6e9c6",
+    borderRadius: "4px",
+    color: '#3c763d'
+}
+
+
 //This function provides the random message shown when the user adds something to the cart
 function displayRandomMessage(){
     let messages = ['Wow!', 'Great choice!', 'Devour it!', ':)', 'Good one!', 'Share it!', "Love it!"];
     let randomMessage = messages[Math.floor(Math.random() * messages.length)];
-    let displayAddedMessage = <div className="alert">{randomMessage}</div>;
+    let displayAddedMessage = <div style={randomMessageStyle}>{randomMessage}</div>;
        return displayAddedMessage
 }
 

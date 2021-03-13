@@ -1,6 +1,6 @@
-@import '../../style/mixins';
-@import '../../style/colors';
-
+@import "../../style/mixins";
+@import "../../style/colors";
+@import "../../style/layout-mixin";
 
 * {
     box-sizing: border-box;
@@ -9,14 +9,16 @@
 }
 
 .nav-container {
-    @include build-box(100%, 60px, $shaded-purple, 0, 3px 5px);
-    position: fixed;
+    @include box(100%, 60px, 0, fixed);
     top: 0;
     left: 0;
     right: 0;
     z-index: 2;
-    @include flex();
-    justify-content: flex-end;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3px 5px;
+    background-color: $shaded-purple;
     a {
         @include font(link);
     }
@@ -25,49 +27,47 @@
         color: $oranged-yellow;
     }
     input {
-        font-family: 'Roboto Mono';
-        font-size: 1.3em;
         width: 15%;
         padding: 7px;
         border-radius: 5px;
+        font: {
+            family: "Roboto Mono";
+            size: 1.3em;
+        }
     }
-    #search{
-        width: 400px;
-        height: 70%;     
-        input{
-            width: 80%;
-            height: 100%;
+    #search {
+        @include box(400px, 70%);
+        input {
+            @include box(80%, 100%);
             border: none;
-            color: $shaded-purple;
             font-size: 1.6em;
+            color: $shaded-purple;
         }
         button {
-            width: 10%;
-            height: 100%;
+            @include box(10%, 100%);
             border: none;
             border-radius: 5px;
             background: inherit;
-            .search-icon, i {
+            .search-icon {
+                display: inline-block;
                 font-size: 1.7rem;
                 color: white;
-                display: inline-block;
                 vertical-align: bottom;
-            } 
+            }
         }
         button:hover {
-            .search-icon, i {
+            .search-icon {
                 color: $oranged-yellow;
             }
             background: #52303a;
             cursor: pointer;
         }
-
     }
     #cart {
         font-size: 3.4em;
         margin-right: 20px;
         margin-left: 10px;
-        opacity: .9;
+        opacity: 0.9;
         color: $oranged-yellow;
         position: absolute;
         right: 10px;

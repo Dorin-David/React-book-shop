@@ -1,0 +1,34 @@
+@import "../../../style/colors";
+@import "../../../style/layout-mixin";
+
+.card-description {
+  @include box(300px, 80px, auto 260px, absolute);
+  top: 0;
+  bottom: 0;
+  h1,
+  h2 {
+    text-align: center;
+    font-family: "Noto Sans", sans-serif, serif, monospace;
+  }
+  h1 {
+    font-size: 3rem;
+    color: $oranged-yellow;
+  }
+  h2 {
+    font-size: 2rem;
+    color: $shaded-purple;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .card-description {
+    margin-left: 160px;
+    width: 200px;
+    h1 {
+      font-size: 2rem;
+    }
+    h2 {
+      font-size: 1.6rem;
+    }
+  }
+}

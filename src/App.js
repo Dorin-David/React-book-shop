@@ -1,6 +1,6 @@
 import React from 'react';
 import NavBar from './components/NavBar/NavBar';
-import { Main } from './containers/Main/Main';
+import { Main } from './components/Main/Main';
 import Cart from './components/Cart/Cart';
 import Description from './components/Description/Description';
 import { catalog } from './utilities/catalog';
@@ -63,13 +63,15 @@ class App extends React.Component {
 
   toggleCart() {
     this.setState(state => ({
-      toggleCart: !state.toggleCart
+      toggleCart: !state.toggleCart,
+      cartFullPage: false
     }))
   }
 
   fullViewCart() {
+    console.log('triggered')
     this.setState(state => ({
-      fullPage: !state.cartFullPage
+      cartFullPage: !state.cartFullPage
     }))
   }
 
@@ -114,7 +116,7 @@ class App extends React.Component {
                                  cart={this.state.cart} 
                                  adjustQuantity={this.adjustQuantity} 
                                  fullPage={this.state.cartFullPage}
-                                 fullView={this.state.fullViewCart}
+                                 fullView={this.fullViewCart}
                                  /> : null}
         {this.state.showMessage ? displayRandomMessage() : null}
         {this.state.showDescription ? <Description displayObject={this.state.currentDisplayObject} onClick={this.closeDescription} /> : null}

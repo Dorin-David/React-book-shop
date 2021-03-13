@@ -1,0 +1,33 @@
+.btn-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 0;
+  right: 2px;
+}
+
+.btn-wrapper #full-btn,
+.btn-wrapper #close-btn {
+  margin: 1px 2px;
+  font-size: 3.3rem;
+  color: #e9dede;
+}
+
+.btn-wrapper #close-btn {
+  font-size: 2.9rem;
+}
+
+.btn-wrapper #full-btn:hover {
+  cursor: pointer;
+  color: royalblue;
+}
+
+.btn-wrapper #close-btn:hover {
+  cursor: pointer;
+  color: red;
+}
+/*# sourceMappingURL=CartButtons.css.map */

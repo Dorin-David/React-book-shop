@@ -1,0 +1,19 @@
+.display-wrapper {
+  position: absolute;
+  top: 0;
+  right: 5px;
+}
+
+.display-wrapper #normal-display,
+.display-wrapper #large-display {
+  margin: 1px 3px;
+  font-size: 3em;
+  color: #444953;
+}
+
+.display-wrapper #normal-display:hover,
+.display-wrapper #large-display:hover {
+  cursor: pointer;
+  color: gray;
+}
+/*# sourceMappingURL=MainButtons.css.map */

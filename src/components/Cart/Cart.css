@@ -1,4 +1,44 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
+/*
+  Text types: 
+     
+   > Book title (-Main + Cart-)
+   > Author (-Main + Cart-)
+   > price (Main)
+   > discounted price
+   > buttons (-Main + Cart-)
+   > cart buttons
+
+
+*/
+/*
+ ORDER for properties
+  1) width/height
+  2) display (and other related rules)
+  3) margin/padding
+  4) background
+  5) border
+  6) children
+*/
+/*
+ ORDER for properties
+ ! mixins
+  1) width/height
+  2) display (and other related rules)
+  2.5) position (and other related rules)
+  3) margin/padding
+  4) background
+  5) border
+  6) color
+  7) children
+
+  Text
+
+  margin/padding
+  font
+  text
+  color
+*/
 #cart-box-wrapper.full-view {
   width: 90%;
   height: 80%;
@@ -7,145 +47,25 @@
 #cart-box-wrapper {
   width: 90%;
   height: 60vh;
-  background: white;
   margin: 10px auto;
-  padding: initial;
   position: fixed;
   left: 0;
   right: 0;
   top: 70px;
-  border: 1px solid #121212;
-  border-radius: 2px;
   padding-top: 35px;
   background: #444953;
+  border: 1px solid #121212;
+  border-radius: 2px;
 }
 
 #cart-box-wrapper #inner-cart-box {
   width: 100%;
   height: 100%;
-  background: white;
   margin: 0;
+  position: initial;
   padding: 5px 10px;
+  background-color: white;
   overflow: hidden auto;
-}
-
-#cart-box-wrapper .btn-wrapper {
-  position: absolute;
-  top: 0;
-  right: 2px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-#cart-box-wrapper .btn-wrapper #full-btn, #cart-box-wrapper .btn-wrapper #close-btn {
-  margin: 1px 2px;
-  font-size: 3.3rem;
-  color: #e9dede;
-}
-
-#cart-box-wrapper .btn-wrapper #close-btn {
-  font-size: 2.9rem;
-}
-
-#cart-box-wrapper .btn-wrapper #full-btn:hover {
-  cursor: pointer;
-  color: royalblue;
-}
-
-#cart-box-wrapper .btn-wrapper #close-btn:hover {
-  cursor: pointer;
-  color: red;
-}
-
-#cart-box-wrapper .cart-card {
-  width: 100%;
-  height: 350px;
-  margin-top: 10px;
-  position: relative;
-  border-top: 1px solid #673F4C;
-  padding-bottom: 10px;
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
-  padding: 5px;
-}
-
-#cart-box-wrapper .cart-card img {
-  width: 200px;
-  height: 300px;
-  display: inline-block;
-}
-
-#cart-box-wrapper .cart-card img:hover {
-  cursor: pointer;
-  -webkit-box-shadow: 0px 2px 1px rgba(107, 103, 103, 0.5), 2px 0px 1px rgba(107, 103, 103, 0.5), 0px -2px 1px rgba(107, 103, 103, 0.5), -2px -2px 1px rgba(107, 103, 103, 0.5);
-          box-shadow: 0px 2px 1px rgba(107, 103, 103, 0.5), 2px 0px 1px rgba(107, 103, 103, 0.5), 0px -2px 1px rgba(107, 103, 103, 0.5), -2px -2px 1px rgba(107, 103, 103, 0.5);
-}
-
-#cart-box-wrapper .card-description {
-  width: 300px;
-  height: 80px;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  margin: auto 260px;
-}
-
-#cart-box-wrapper .card-description h1, #cart-box-wrapper .card-description h2 {
-  text-align: center;
-  font-family: 'Noto Sans', sans-serif, serif, monospace;
-}
-
-#cart-box-wrapper .card-description h1 {
-  font-size: 3rem;
-  color: #FFA100;
-}
-
-#cart-box-wrapper .card-description h2 {
-  font-size: 2rem;
-  color: #673F4C;
-}
-
-#cart-box-wrapper .buttons-wrapper {
-  width: 120px;
-  margin-left: 50px;
-}
-
-#cart-box-wrapper .buttons-wrapper .cart-btn {
-  font-size: 2.6rem;
-  margin: 0 5px;
-  opacity: 0.8;
-}
-
-#cart-box-wrapper .buttons-wrapper .cart-btn:hover {
-  cursor: pointer;
-  opacity: 1;
-}
-
-#cart-box-wrapper .buttons-wrapper #increase-btn {
-  color: #FFA100;
-}
-
-#cart-box-wrapper .buttons-wrapper #decrease-btn {
-  color: royalblue;
-}
-
-#cart-box-wrapper .buttons-wrapper #remove-btn {
-  color: #e4443e;
-}
-
-#cart-box-wrapper .buttons-wrapper p {
-  font-family: 'Noto Sans', sans-serif, serif, monospace;
-  font-size: 2em;
-  line-height: 1.5;
-  color: inherit;
-  font-size: 1.7rem;
-  width: 200px;
-  position: absolute;
-  left: 60px;
 }
 
 #cart-box-wrapper #empty-cart-message {
@@ -155,9 +75,7 @@
   color: inherit;
   width: 400px;
   height: 30px;
-  background: none;
   margin: auto;
-  padding: initial;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -178,40 +96,5 @@
 #cart-box-wrapper #totalDue span {
   font-size: 2.4rem;
   color: #673F4C;
-}
-
-@media screen and (min-width: 515px) and (max-width: 675px) {
-  #cart-box-wrapper #inner-cart-box .card-description {
-    margin-left: 200px;
-  }
-  #cart-box-wrapper #inner-cart-box .card-description h1 {
-    font-size: 2.2rem;
-  }
-  #cart-box-wrapper #inner-cart-box .card-description h2 {
-    font-size: 1.6rem;
-  }
-}
-
-@media screen and (max-width: 520px) {
-  #cart-box-wrapper #inner-cart-box .cart-card img, #cart-box-wrapper #inner-cart-box .cart-card.l img {
-    width: 160px;
-    height: 260px;
-  }
-  #cart-box-wrapper #inner-cart-box .cart-card .card-description, #cart-box-wrapper #inner-cart-box .cart-card.l .card-description {
-    margin-left: 160px;
-    width: 200px;
-  }
-  #cart-box-wrapper #inner-cart-box .cart-card .card-description h1, #cart-box-wrapper #inner-cart-box .cart-card.l .card-description h1 {
-    font-size: 2rem;
-  }
-  #cart-box-wrapper #inner-cart-box .cart-card .card-description h2, #cart-box-wrapper #inner-cart-box .cart-card.l .card-description h2 {
-    font-size: 1.6rem;
-  }
-  #cart-box-wrapper #inner-cart-box .cart-card .buttons-wrapper, #cart-box-wrapper #inner-cart-box .cart-card.l .buttons-wrapper {
-    margin-left: 25px;
-  }
-  #cart-box-wrapper #inner-cart-box .cart-card .buttons-wrapper p, #cart-box-wrapper #inner-cart-box .cart-card.l .buttons-wrapper p {
-    left: 40px;
-  }
 }
 /*# sourceMappingURL=Cart.css.map */

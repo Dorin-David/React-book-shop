@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,gBAAgB,CAAC;EACb,QAAQ,EAAE,QAAQ;EAClB,GAAG,EAAE,CAAC;EACN,KAAK,EAAE,GAAG;CAYb;;AAfD,AAII,gBAJY,CAIZ,eAAe;AAJnB,gBAAgB,CAKZ,cAAc,CAAC;EACX,MAAM,EAAE,OAAO;EACf,SAAS,EAAE,GAAG;EACd,KAAK,ECRE,OAAO;CDSjB;;AATL,AAUI,gBAVY,CAUZ,eAAe,AAAA,MAAM;AAVzB,gBAAgB,CAWZ,cAAc,AAAA,MAAM,CAAC;EACjB,MAAM,EAAE,OAAO;EACf,KAAK,EAAE,IAAI;CACd",
+    "sources": [
+        "MainButtons.scss",
+        "../../../style/_colors.scss"
+    ],
+    "names": [],
+    "file": "MainButtons.css"
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 import { BiWindow } from 'react-icons/bi';
 import { FaWindowClose } from 'react-icons/fa';
+import './CartButtons.css'
 
 
 const cartButtons = props => (

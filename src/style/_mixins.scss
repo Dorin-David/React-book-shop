@@ -1,5 +1,21 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+/*
+  Text types: 
+     
+   > Book title (-Main + Cart-)
+   > Author (-Main + Cart-)
+   > price (Main)
+   > discounted price
+   > buttons (-Main + Cart-)
+   > cart buttons
+
+
+*/
+
+
+
 //mixin for fonts
 @mixin font($type, $size:inherit, $color:inherit){
     font-family: 'Noto Sans', sans-serif, serif, monospace;
@@ -29,14 +45,27 @@
         color: rgba(1,1,1, 0.8);
     }
 }
+
+
+
+/*
+ ORDER for properties
+  1) width/height
+  2) display (and other related rules)
+  3) margin/padding
+  4) background
+  5) border
+  6) children
+*/
+
+
 //build box
 @mixin build-box($width, $height:auto, $color:initial, $margin: initial, $padding: initial){
     width: $width;
     height: $height;
     background: $color;
     margin: $margin;
-    padding: $padding;
-    
+    padding: $padding;  
 }
 
 //default-flex 
