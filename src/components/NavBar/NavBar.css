@@ -1,4 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
+/*
+  Text types: 
+     
+   > Book title (-Main + Cart-)
+   > Author (-Main + Cart-)
+   > price (Main)
+   > discounted price
+   > buttons (-Main + Cart-)
+   > cart buttons
+
+
+*/
+/*
+ ORDER for properties
+  1) width/height
+  2) display (and other related rules)
+  3) margin/padding
+  4) background
+  5) border
+  6) children
+*/
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -57,7 +78,6 @@
 .nav-container #search {
   width: 400px;
   height: 70%;
-  margin: auto;
 }
 
 .nav-container #search input {

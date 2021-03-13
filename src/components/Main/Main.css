@@ -20,6 +20,15 @@
   5) border
   6) children
 */
+/*
+ ORDER for properties
+  1) width/height
+  2) display (and other related rules)
+  3) margin/padding
+  4) background
+  5) border
+  6) children
+*/
 body {
   overflow: hidden auto;
 }
@@ -27,22 +36,19 @@ body {
 .main-container {
   width: 100%;
   height: auto;
-  background: none;
   margin: 0;
-  padding: initial;
+  position: initial;
 }
 
 .main-container .description-container {
   width: 80%;
   height: 100%;
-  background: none;
   margin: 50px auto;
-  padding: 10px;
-  margin-top: 80px;
   position: relative;
+  margin-top: 80px;
 }
 
-.main-container .description-container > h1 {
+.main-container .description-container h1 {
   font-family: 'Noto Sans', sans-serif, serif, monospace;
   text-align: center;
   font-size: 3.2em;
@@ -51,7 +57,7 @@ body {
   font-size: 3.8em;
 }
 
-.main-container .description-container > h2 {
+.main-container .description-container h2 {
   font-family: 'Noto Sans', sans-serif, serif, monospace;
   text-align: center;
   font-size: 3.2em;
@@ -60,7 +66,7 @@ body {
   font-size: 2.0em;
 }
 
-.main-container .description-container > p {
+.main-container .description-container p {
   font-family: 'Noto Sans', sans-serif, serif, monospace;
   font-size: 2em;
   line-height: 1.5;
@@ -69,22 +75,7 @@ body {
 }
 
 .main-container #books-container {
-  width: 80%;
-  height: 60%;
-  background: none;
-  margin: 10px auto;
-  padding: 15px;
-  border-left: 2px solid #673F4C;
-  border-right: 2px solid #673F4C;
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  background-color: red;
 }
 
 .main-container #books-container .display-wrapper {
