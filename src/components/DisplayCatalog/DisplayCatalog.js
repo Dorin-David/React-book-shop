@@ -1,6 +1,7 @@
 import React from 'react';
 import {catalog} from '../../utilities/catalog';
 import {getProperties, getRandomElements, getDiscount} from '../../utilities/utilities';
+import './DisplayCatalog.css'
 
 let currentDiscountedElements = getRandomElements(getProperties(catalog, 'title'));
 let currentDiscount = Math.floor(Math.random() * 20) <= 10 ? 10 : 20

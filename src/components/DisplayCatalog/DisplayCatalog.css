@@ -1,0 +1,155 @@
+/*
+ ORDER for properties
+ ! mixins
+  1) width/height
+  2) display (and other related rules)
+  2.5) position (and other related rules)
+  3) margin/padding
+  4) background
+  5) border
+  6) color
+  7) children
+
+  Text
+
+  margin/padding
+  font
+  text
+  color
+*/
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
+/*
+  Text types: 
+     
+   > Book title (-Main + Cart-)
+   > Author (-Main + Cart-)
+   > price (Main)
+   > discounted price
+   > buttons (-Main + Cart-)
+   > cart buttons
+
+
+*/
+/*
+ ORDER for properties
+  1) width/height
+  2) display (and other related rules)
+  3) margin/padding
+  4) background
+  5) border
+  6) children
+*/
+.card {
+  width: 300px;
+  height: 400px;
+  margin: 10px 0;
+  position: initial;
+  padding: 10px;
+}
+
+.card img {
+  width: 70%;
+  height: 83.5%;
+  display: block;
+  margin: 0 auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-top: 10px;
+}
+
+.card h2 {
+  font-family: 'Noto Sans', sans-serif, serif, monospace;
+  text-align: center;
+  font-size: 3.2em;
+  font-size: 2.2em;
+  color: #673F4C;
+}
+
+.card h3 {
+  font-family: 'Noto Sans', sans-serif, serif, monospace;
+  text-align: center;
+  font-size: 3.2em;
+  font-size: 1.8em;
+  color: #3f3937;
+}
+
+.card p {
+  font-family: 'Noto Sans', sans-serif, serif, monospace;
+  text-align: center;
+  font-size: 3.2em;
+  font-size: 1.7em;
+  color: inherit;
+  font-weight: bold;
+}
+
+.card .discountedPrice {
+  font-family: 'Noto Sans', sans-serif, serif, monospace;
+  font-size: 1.7rem;
+  text-decoration: line-through;
+  color: rgba(1, 1, 1, 0.8);
+}
+
+.card #add-btn-main {
+  margin-left: 10px;
+  font-size: 1.7em;
+  color: #FFA100;
+  opacity: 0.8;
+}
+
+.card #add-btn-main:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+
+.card.large {
+  width: 400px;
+  height: 500px;
+  background: none;
+  margin: 10px 20px;
+  padding: 10px;
+}
+
+.card.large h2 {
+  font-size: 2.6em;
+}
+
+.card.large h3 {
+  font-size: 2em;
+}
+
+.card.large p {
+  font-size: 1.9em;
+}
+
+.card.large #add-btn-main {
+  font-size: 3rem;
+}
+
+img:hover {
+  cursor: pointer;
+  -webkit-box-shadow: 0px 2px 1px rgba(107, 103, 103, 0.5), 2px 0px 1px rgba(107, 103, 103, 0.5), 0px -2px 1px rgba(107, 103, 103, 0.5), -2px -2px 1px rgba(107, 103, 103, 0.5);
+          box-shadow: 0px 2px 1px rgba(107, 103, 103, 0.5), 2px 0px 1px rgba(107, 103, 103, 0.5), 0px -2px 1px rgba(107, 103, 103, 0.5), -2px -2px 1px rgba(107, 103, 103, 0.5);
+}
+
+@media screen and (max-width: 1040px) {
+  .main-container #books-container .card.large {
+    margin: 10px auto;
+  }
+  .main-container #books-container .card.large img {
+    min-width: 200px;
+  }
+}
+
+@media screen and (max-width: 808px) {
+  .main-container #books-container .card {
+    margin: 10px auto;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .main-container #books-container .card.large {
+    width: 300px;
+    height: 400px;
+  }
+}
+/*# sourceMappingURL=DisplayCatalog.css.map */

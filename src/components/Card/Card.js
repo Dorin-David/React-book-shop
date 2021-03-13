@@ -1,6 +1,7 @@
 import React from 'react';
 import CardButtons from '../Buttons/CardButtons/CardButtons';
 import DescriptionCard from '../Card/DescriptionCard/DescriptionCard';
+import './Card.css'
 
 const card = props => (
     <div className='cart-card' >

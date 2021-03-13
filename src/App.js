@@ -63,13 +63,15 @@ class App extends React.Component {
 
   toggleCart() {
     this.setState(state => ({
-      toggleCart: !state.toggleCart
+      toggleCart: !state.toggleCart,
+      cartFullPage: false
     }))
   }
 
   fullViewCart() {
+    console.log('triggered')
     this.setState(state => ({
-      fullPage: !state.cartFullPage
+      cartFullPage: !state.cartFullPage
     }))
   }
 
@@ -114,7 +116,7 @@ class App extends React.Component {
                                  cart={this.state.cart} 
                                  adjustQuantity={this.adjustQuantity} 
                                  fullPage={this.state.cartFullPage}
-                                 fullView={this.state.fullViewCart}
+                                 fullView={this.fullViewCart}
                                  /> : null}
         {this.state.showMessage ? displayRandomMessage() : null}
         {this.state.showDescription ? <Description displayObject={this.state.currentDisplayObject} onClick={this.closeDescription} /> : null}

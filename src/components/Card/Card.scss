@@ -1,0 +1,82 @@
+@import "../../style/colors";
+@import "../../style/mixins";
+@import "../../style/layout-mixin";
+
+.cart-card {
+    @include box(100%, 350px, initial, relative);
+    margin-top: 10px;
+    padding: 5px;
+    padding-bottom: 10px;
+    border-top: 1px solid $shaded-purple;
+    box-sizing: content-box;
+
+    img {
+        @include box(200px, 300px);
+        display: inline-block;
+    }
+    img:hover {
+        cursor: pointer;
+        box-shadow: 0px 2px 1px rgba(107, 103, 103, 0.5), 2px 0px 1px rgba(107, 103, 103, 0.5),
+            0px -2px 1px rgba(107, 103, 103, 0.5), -2px -2px 1px rgba(107, 103, 103, 0.5);
+    }
+}
+
+.buttons-wrapper {
+    width: 120px;
+    margin-left: 50px;
+    .cart-btn {
+        margin: 0 5px;
+        font-size: 2.6rem;
+        opacity: 0.8;
+    }
+    .cart-btn:hover {
+        cursor: pointer;
+        opacity: 1;
+    }
+
+    #increase-btn {
+        color: $oranged-yellow;
+    }
+    #decrease-btn {
+        color: royalblue;
+    }
+    #remove-btn {
+        color: $redish;
+    }
+    //style price
+    p {
+        @include font(paragraph);
+        font-size: 1.7rem;
+        width: 200px;
+        position: absolute;
+        left: 60px;
+    }
+}
+
+@media screen and (min-width: 515px) and (max-width: 675px) {
+    .card-description {
+        margin-left: 200px;
+        h1 {
+            font-size: 2.2rem;
+        }
+        h2 {
+            font-size: 1.6rem;
+        }
+    }
+}
+
+@media screen and (max-width: 520px) {
+    .cart-card {
+        img {
+            width: 160px;
+            height: 260px;
+        }
+
+        .buttons-wrapper {
+            margin-left: 25px;
+            p {
+                left: 40px;
+            }
+        }
+    }
+}

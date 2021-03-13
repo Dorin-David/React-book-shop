@@ -1,0 +1,86 @@
+@import "../../style/layout-mixin";
+@import "../../style/colors";
+@import "../../style/mixins";
+
+.card {
+    @include box(300px, 400px, 10px 0);
+    padding: 10px;
+    img {
+        width: 70%;
+        height: 83.5%;
+        display: block;
+        margin: 0 auto;
+        object-fit: cover;
+        margin-top: 10px;
+    }
+    h2 {
+        @include font(header, 2.2em, $shaded-purple);
+    }
+    h3 {
+        @include font(header, 1.8em, #3f3937);
+    }
+    p {
+        @include font(header, 1.7em);
+        font-weight: bold;
+    }
+
+    .discountedPrice {
+        @include font(discountedPrice);
+    }
+    //add button in main page
+    #add-btn-main {
+        margin-left: 10px;
+        font-size: 1.7em;
+        color: $oranged-yellow;
+        opacity: 0.8;
+    }
+    #add-btn-main:hover {
+        cursor: pointer;
+        opacity: 1;
+    }
+}
+.card.large {
+    @include build-box(400px, 500px, none, 10px 20px, 10px);
+    h2 {
+        font-size: 2.6em;
+    }
+    h3 {
+        font-size: 2em;
+    }
+    p {
+        font-size: 1.9em;
+    }
+    #add-btn-main {
+        font-size: 3rem;
+    }
+}
+
+img:hover {
+    cursor: pointer;
+    box-shadow: 0px 2px 1px rgba(107, 103, 103, 0.5), 2px 0px 1px rgba(107, 103, 103, 0.5),
+        0px -2px 1px rgba(107, 103, 103, 0.5), -2px -2px 1px rgba(107, 103, 103, 0.5);
+}
+
+
+//fix media below
+@media screen and (max-width: 1040px) {
+    .main-container #books-container .card.large {
+        margin: 10px auto;
+        img {
+            min-width: 200px;
+        }
+    }
+}
+
+@media screen and (max-width: 808px) {
+    .main-container #books-container .card {
+        margin: 10px auto;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .main-container #books-container .card.large {
+        width: 300px;
+        height: 400px;
+    }
+}

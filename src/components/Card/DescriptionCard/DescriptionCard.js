@@ -1,4 +1,5 @@
 import React from 'react';
+import './DescriptionCard.css'
 
 const descriptionCard = props => (
             <div className='card-description' >

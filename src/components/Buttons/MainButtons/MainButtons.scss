@@ -1,0 +1,19 @@
+@import '../../../style/colors';
+
+
+.display-wrapper {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    #normal-display,
+    #large-display {
+        margin: 1px 3px;
+        font-size: 3em;
+        color: $dark-grayish;
+    }
+    #normal-display:hover,
+    #large-display:hover {
+        cursor: pointer;
+        color: gray;
+    }
+}

@@ -1,0 +1,28 @@
+@import "../../../style/colors";
+
+.btn-wrapper {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 2px;
+    #full-btn,
+    #close-btn {
+        margin: 1px 2px;
+        font-size: 3.3rem;
+        color: $button-gray;
+    }
+    #close-btn {
+        font-size: 2.9rem;
+    }
+
+    #full-btn:hover {
+        cursor: pointer;
+        color: royalblue;
+    }
+
+    #close-btn:hover {
+        cursor: pointer;
+        color: red;
+    }
+}

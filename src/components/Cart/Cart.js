@@ -20,7 +20,8 @@ const Cart = props => {
       showDescription={props.showDescription}
       adjustQuantity={props.adjustQuantity}
     />
-    <p id='totalDue'><span>Total: </span>{`${totalDue.toFixed(2)}`}$</p></div>
+    <p id='totalDue'><span>Total: </span>{`${totalDue.toFixed(2)}`}$</p>
+  </div>
   return (
     <div id='cart-box-wrapper' className={props.fullPage ? 'full-view' : 'normal-view'} >
       <CartButtons
