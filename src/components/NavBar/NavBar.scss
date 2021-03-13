@@ -1,7 +1,6 @@
-@import '../../style/mixins';
-@import '../../style/colors';
-@import '../../style/layout-mixin';
-
+@import "../../style/mixins";
+@import "../../style/colors";
+@import "../../style/layout-mixin";
 
 * {
     box-sizing: border-box;
@@ -32,18 +31,17 @@
         padding: 7px;
         border-radius: 5px;
         font: {
-            family: 'Roboto Mono';
+            family: "Roboto Mono";
             size: 1.3em;
-        }  
+        }
     }
-    #search{
-        @include box(400px, 70%);  
-        input{
-            @include box(80%, 100%);  
+    #search {
+        @include box(400px, 70%);
+        input {
+            @include box(80%, 100%);
             border: none;
             font-size: 1.6em;
             color: $shaded-purple;
-            
         }
         button {
             @include box(10%, 100%);
@@ -55,7 +53,7 @@
                 font-size: 1.7rem;
                 color: white;
                 vertical-align: bottom;
-            } 
+            }
         }
         button:hover {
             .search-icon {
@@ -64,13 +62,12 @@
             background: #52303a;
             cursor: pointer;
         }
-
     }
     #cart {
         font-size: 3.4em;
         margin-right: 20px;
         margin-left: 10px;
-        opacity: .9;
+        opacity: 0.9;
         color: $oranged-yellow;
         position: absolute;
         right: 10px;

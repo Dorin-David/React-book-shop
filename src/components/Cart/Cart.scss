@@ -18,7 +18,7 @@
   border-radius: 2px;
 
   #inner-cart-box {
-    @include build-box(100%, 100%, 0);
+    @include box(100%, 100%, 0);
     padding: 5px 10px;
     background-color: white;
     overflow: hidden auto;
@@ -26,8 +26,7 @@
 
   #empty-cart-message {
     @include font(paragraph);
-    @include build-box(400px, 30px, none, auto);
-    position: absolute;
+    @include box(400px, 30px, auto, absolute);
     top: 0;
     bottom: 0;
     left: 0;

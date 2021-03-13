@@ -87,7 +87,7 @@
   width: 15%;
   padding: 7px;
   border-radius: 5px;
-  font-family: 'Roboto Mono';
+  font-family: "Roboto Mono";
   font-size: 1.3em;
 }
 
@@ -138,7 +138,7 @@
   font-size: 3.4em;
   margin-right: 20px;
   margin-left: 10px;
-  opacity: .9;
+  opacity: 0.9;
   color: #FFA100;
   position: absolute;
   right: 10px;

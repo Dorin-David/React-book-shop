@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
+/*
+  Text types: 
+     
+   > Book title (-Main + Cart-)
+   > Author (-Main + Cart-)
+   > price (Main)
+   > discounted price
+   > buttons (-Main + Cart-)
+   > cart buttons
+
+
+*/
+/*
+ ORDER for properties
+  1) width/height
+  2) display (and other related rules)
+  3) margin/padding
+  4) background
+  5) border
+  6) children
+*/
+.buttons-wrapper {
+  width: 120px;
+  margin-left: 50px;
+}
+
+.buttons-wrapper .cart-btn {
+  margin: 0 5px;
+  font-size: 2.6rem;
+  opacity: 0.8;
+}
+
+.buttons-wrapper .cart-btn:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+
+.buttons-wrapper #increase-btn {
+  color: #FFA100;
+}
+
+.buttons-wrapper #decrease-btn {
+  color: royalblue;
+}
+
+.buttons-wrapper #remove-btn {
+  color: #e4443e;
+}
+
+.buttons-wrapper p {
+  font-family: 'Noto Sans', sans-serif, serif, monospace;
+  font-size: 2em;
+  line-height: 1.5;
+  color: inherit;
+  font-size: 1.7rem;
+  width: 200px;
+  position: absolute;
+  left: 60px;
+}
+
+@media screen and (max-width: 520px) {
+  .buttons-wrapper {
+    margin-left: 25px;
+  }
+  .buttons-wrapper p {
+    left: 40px;
+  }
+}
+/*# sourceMappingURL=CardButtons.css.map */

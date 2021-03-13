@@ -42,7 +42,7 @@
 .card {
   width: 300px;
   height: 400px;
-  margin: 10px 0;
+  margin: 10px 20px;
   position: initial;
   padding: 10px;
 }
@@ -50,11 +50,12 @@
 .card img {
   width: 70%;
   height: 83.5%;
-  display: block;
   margin: 0 auto;
-  -o-object-fit: cover;
-     object-fit: cover;
+  position: initial;
+  display: block;
   margin-top: 10px;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .card h2 {
@@ -104,8 +105,8 @@
 .card.large {
   width: 400px;
   height: 500px;
-  background: none;
   margin: 10px 20px;
+  position: initial;
   padding: 10px;
 }
 

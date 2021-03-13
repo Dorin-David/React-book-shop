@@ -26,9 +26,10 @@
   bottom: 0;
 }
 
-.card-description h1, .card-description h2 {
+.card-description h1,
+.card-description h2 {
   text-align: center;
-  font-family: 'Noto Sans', sans-serif, serif, monospace;
+  font-family: "Noto Sans", sans-serif, serif, monospace;
 }
 
 .card-description h1 {

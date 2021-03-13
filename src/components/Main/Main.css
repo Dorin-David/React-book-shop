@@ -85,156 +85,19 @@ body {
 }
 
 .main-container #books-container {
-  background-color: red;
-}
-
-.main-container #books-container .display-wrapper {
-  position: absolute;
-  top: 0;
-  right: 5px;
-}
-
-.main-container #books-container .display-wrapper #normal-display, .main-container #books-container .display-wrapper #large-display {
-  font-size: 3em;
-  color: #444953;
-  margin: 1px 3px;
-}
-
-.main-container #books-container .display-wrapper #normal-display:hover, .main-container #books-container .display-wrapper #large-display:hover {
-  cursor: pointer;
-  color: gray;
-}
-
-.main-container #books-container .card {
-  width: 300px;
-  height: 400px;
-  background: none;
-  margin: 10px 0;
-  padding: 10px;
-  display: inline-block;
-}
-
-.main-container #books-container .card img {
-  width: 70%;
-  height: 83.5%;
-  display: block;
-  margin: 0 auto;
-  -o-object-fit: cover;
-     object-fit: cover;
-  margin-top: 10px;
-}
-
-.main-container #books-container .card h2 {
-  font-family: 'Noto Sans', sans-serif, serif, monospace;
-  text-align: center;
-  font-size: 3.2em;
-  font-size: 2.2em;
-  color: #673F4C;
-}
-
-.main-container #books-container .card h3 {
-  font-family: 'Noto Sans', sans-serif, serif, monospace;
-  text-align: center;
-  font-size: 3.2em;
-  font-size: 1.8em;
-  color: #3F3937;
-}
-
-.main-container #books-container .card p {
-  font-family: 'Noto Sans', sans-serif, serif, monospace;
-  text-align: center;
-  font-size: 3.2em;
-  font-size: 1.7em;
-  color: inherit;
-  font-weight: bold;
-}
-
-.main-container #books-container .card .discountedPrice {
-  font-family: 'Noto Sans', sans-serif, serif, monospace;
-  font-size: 1.7rem;
-  text-decoration: line-through;
-  color: rgba(1, 1, 1, 0.8);
-}
-
-.main-container #books-container .card #add-btn-main {
-  margin-left: 10px;
-  font-size: 1.7em;
-  color: #FFA100;
-  opacity: .8;
-}
-
-.main-container #books-container .card #add-btn-main:hover {
-  cursor: pointer;
-  opacity: 1;
-}
-
-.main-container #books-container .card.large {
-  width: 400px;
-  height: 500px;
-  background: none;
-  margin: 10px 20px;
-  padding: 10px;
-}
-
-.main-container #books-container .card.large h2 {
-  font-size: 2.6em;
-}
-
-.main-container #books-container .card.large h3 {
-  font-size: 2em;
-}
-
-.main-container #books-container .card.large p {
-  font-size: 1.9em;
-}
-
-.main-container #books-container .card.large #add-btn-main {
-  font-size: 3rem;
-}
-
-.main-container img:hover {
-  cursor: pointer;
-  -webkit-box-shadow: 0px 2px 1px rgba(107, 103, 103, 0.5), 2px 0px 1px rgba(107, 103, 103, 0.5), 0px -2px 1px rgba(107, 103, 103, 0.5), -2px -2px 1px rgba(107, 103, 103, 0.5);
-          box-shadow: 0px 2px 1px rgba(107, 103, 103, 0.5), 2px 0px 1px rgba(107, 103, 103, 0.5), 0px -2px 1px rgba(107, 103, 103, 0.5), -2px -2px 1px rgba(107, 103, 103, 0.5);
-}
-
-@media screen and (max-width: 1040px) {
-  .main-container #books-container .card.large {
-    margin: 10px auto;
-  }
-  .main-container #books-container .card.large img {
-    min-width: 200px;
-  }
-}
-
-@media screen and (max-width: 808px) {
-  .main-container #books-container .card {
-    margin: 10px auto;
-  }
-}
-
-@media screen and (max-width: 460px) {
-  .main-container #books-container .card.large {
-    width: 300px;
-    height: 400px;
-  }
-}
-
-.alert {
-  position: fixed;
-  top: 60px;
-  left: 0;
-  right: 0;
-  padding: 10px;
-  border: 1px solid #d6e9c6;
-  border-radius: 4px;
-  color: #3c763d;
-  background-color: #dff0d8;
-  width: 180px;
-  height: auto;
-  margin: auto;
-  text-align: center;
-  font-size: 2.4rem;
-  font-weight: bold;
+  width: 80%;
+  height: 60%;
+  margin: 10px auto;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  border-left: 2px solid #673F4C;
+  border-right: 2px solid #673F4C;
 }
 /*# sourceMappingURL=Main.css.map */
