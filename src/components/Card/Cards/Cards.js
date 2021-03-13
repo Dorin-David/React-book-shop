@@ -1,5 +1,5 @@
 import React from 'react';
-import { currentDiscount, currentDiscountedElements } from '../../../containers/Main/Main';
+import { currentDiscount, currentDiscountedElements } from '../../Main/Main';
 import { catalog } from '../../../utilities/catalog';
 import Card from '../Card'
 
