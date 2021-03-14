@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
+@import "./colors";
+
+/*
+
+  Text order
+
+  margin/padding
+  font
+  text
+  color
+*/
+
+//text mixin fot Main page
+@mixin main-text($type) {
+    @if $type == "title" {
+        font: {
+            family: "Noto Sans", sans-serif;
+            size: 2.2em;
+        }
+        text-align: center;
+        color: $shaded-purple;
+    }
+
+    @if $type == "author" {
+        font: {
+            family: "Noto Sans", sans-serif;
+            size: 1.8em;
+        }
+        text-align: center;
+        color: $author;
+    }
+
+    @if $type == "price" {
+        font: {
+            family: "Noto Sans", sans-serif;
+            size: 1.7em;
+            weight: bold;
+        }
+        text-align: center;
+        color: inherit;
+    }
+}
+
+//text mixin for description pop-up
+@mixin description-text($type) {
+    @if $type == "title" {
+        font: {
+            family: "Noto Sans", sans-serif;
+            size: 3rem;
+        }
+        text-align: center;
+        text-shadow: 1px 1px 1px lightgray;
+        color: $description-title;
+    }
+    @if $type == "author" {
+        font: {
+            family: "Noto Sans", sans-serif;
+            size: 2.4rem;
+        }
+        text-align: center;
+        color: $dark-grayish;
+    }
+
+    @if $type == "paragraph" {
+        font: {
+            family: "Noto Sans", sans-serif;
+            size: 1.6rem;
+        }
+        text-align: center;
+        color: $dark-grayish;
+        line-height: 1.4;
+    }
+    @if $type == "discountedPrice" {
+        .card .discountedPrice {
+            font: {
+                family: "Noto Sans", sans-serif;
+                size: 1.7rem;
+            }
+            text-decoration: line-through;
+            color: rgba(1, 1, 1, 0.8);
+        }
+    }
+}
+
+//text mixin for cart
+@mixin cart-text($type) {
+    @if $type == "title" {
+        font-size: 3rem;
+        color: $oranged-yellow;
+    }
+    @if $type == "author" {
+        font-size: 2rem;
+        color: $shaded-purple;
+    }
+    @if $type == "price" {
+        width: 200px;
+        position: absolute;
+        left: 60px;
+        font: {
+            family: "Noto Sans", sans-serif;
+            size: 1.7rem;
+        }
+    }
+    @if $type == "totalDue" {
+        margin-right: 5px;
+        font: {
+            family: "Noto Sans", sans-serif;
+            size: 2em;
+        }
+        text-align: end;
+    }
+
+    @if $type == "totalDueNum" {
+        font-size: 2.4rem;
+        color: $shaded-purple;
+    }
+}

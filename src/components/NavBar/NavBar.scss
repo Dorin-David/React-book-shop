@@ -19,19 +19,12 @@
     justify-content: center;
     padding: 3px 5px;
     background-color: $shaded-purple;
-    a {
-        @include font(link);
-    }
-    a:hover {
-        cursor: pointer;
-        color: $oranged-yellow;
-    }
     input {
         width: 15%;
         padding: 7px;
         border-radius: 5px;
         font: {
-            family: "Roboto Mono";
+            family: "Roboto Mono"; /*keep different font here?*/
             size: 1.3em;
         }
     }
@@ -64,13 +57,14 @@
         }
     }
     #cart {
-        font-size: 3.4em;
-        margin-right: 20px;
-        margin-left: 10px;
-        opacity: 0.9;
-        color: $oranged-yellow;
         position: absolute;
         right: 10px;
+        margin-right: 20px;
+        margin-left: 10px;
+        font-size: 3.4em;
+        color: $oranged-yellow;
+        opacity: 0.9;
+       
     }
     #cart:hover {
         cursor: pointer;

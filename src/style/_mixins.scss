@@ -1,52 +1,34 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
-
-/*
-  Text types: 
-     
-   > Book title (-Main + Cart-)
-   > Author (-Main + Cart-)
-   > price (Main)
-   > discounted price
-   > buttons (-Main + Cart-)
-   > cart buttons
-
-
-*/
-
-
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
 
 //mixin for fonts
-@mixin font($type, $size:inherit, $color:inherit){
-    font-family: 'Noto Sans', sans-serif, serif, monospace;
-    @if $type == 'link' {
+@mixin font($type, $size: inherit, $color: inherit) {
+    font-family: "Noto Sans", sans-serif, serif, monospace;
+    @if $type == "link" {
         text-decoration: none;
-        font-size: 2.0em;
+        font-size: 2em;
         display: block;
         background: inherit;
         margin: 3%;
         color: white;
     }
-    @if $type == 'header' {
+    @if $type == "header" {
         text-align: center;
         font-size: 3.2em;
         font-size: $size;
         color: $color;
     }
-    @if $type == 'paragraph' {
+    @if $type == "paragraph" {
         font-size: 2em;
         line-height: 1.5;
         color: $color;
     }
 
-    @if $type == 'discountedPrice' {
+    @if $type == "discountedPrice" {
         font-size: 1.7rem;
         text-decoration: line-through;
-        color: rgba(1,1,1, 0.8);
+        color: rgba(1, 1, 1, 0.8);
     }
 }
-
-
 
 /*
  ORDER for properties
@@ -58,18 +40,17 @@
   6) children
 */
 
-
 //build box
-@mixin build-box($width, $height:auto, $color:initial, $margin: initial, $padding: initial){
+@mixin build-box($width, $height: auto, $color: initial, $margin: initial, $padding: initial) {
     width: $width;
     height: $height;
     background: $color;
     margin: $margin;
-    padding: $padding;  
+    padding: $padding;
 }
 
-//default-flex 
-@mixin flex(){
+//default-flex
+@mixin flex() {
     display: flex;
     justify-content: center;
     align-items: center;

@@ -69,7 +69,6 @@ class App extends React.Component {
   }
 
   fullViewCart() {
-    console.log('triggered')
     this.setState(state => ({
       cartFullPage: !state.cartFullPage
     }))
