@@ -1,25 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
-/*
-  Text types: 
-     
-   > Book title (-Main + Cart-)
-   > Author (-Main + Cart-)
-   > price (Main)
-   > discounted price
-   > buttons (-Main + Cart-)
-   > cart buttons
-
-
-*/
-/*
- ORDER for properties
-  1) width/height
-  2) display (and other related rules)
-  3) margin/padding
-  4) background
-  5) border
-  6) children
-*/
 /*
  ORDER for properties
  ! mixins
@@ -33,6 +11,16 @@
   7) children
 
   Text
+
+  margin/padding
+  font
+  text
+  color
+*/
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
+/*
+
+  Text order
 
   margin/padding
   font
@@ -78,30 +66,25 @@
 }
 
 .description-wrapper .description-window #title-description {
-  font-family: 'Noto Sans', sans-serif, serif, monospace;
-  text-align: center;
-  font-size: 3.2em;
+  font-family: "Noto Sans", sans-serif;
   font-size: 3rem;
-  color: #1b1b1b;
-  text-shadow: 1px 1px 1px lightgray;
   text-align: center;
+  text-shadow: 1px 1px 1px lightgray;
+  color: #1b1b1b;
 }
 
 .description-wrapper .description-window #author {
-  font-family: 'Noto Sans', sans-serif, serif, monospace;
-  text-align: center;
-  font-size: 3.2em;
+  font-family: "Noto Sans", sans-serif;
   font-size: 2.4rem;
-  color: #444953;
   text-align: center;
+  color: #444953;
 }
 
 .description-wrapper .description-window p {
-  font-family: 'Noto Sans', sans-serif, serif, monospace;
-  font-size: 2em;
-  line-height: 1.5;
-  color: inherit;
+  font-family: "Noto Sans", sans-serif;
   font-size: 1.6rem;
+  text-align: justify;
+  color: #272525;
   line-height: 1.4;
 }
 

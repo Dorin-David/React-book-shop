@@ -1,25 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
-/*
-  Text types: 
-     
-   > Book title (-Main + Cart-)
-   > Author (-Main + Cart-)
-   > price (Main)
-   > discounted price
-   > buttons (-Main + Cart-)
-   > cart buttons
-
-
-*/
-/*
- ORDER for properties
-  1) width/height
-  2) display (and other related rules)
-  3) margin/padding
-  4) background
-  5) border
-  6) children
-*/
 .buttons-wrapper {
   width: 120px;
   margin-left: 50px;
@@ -49,14 +27,11 @@
 }
 
 .buttons-wrapper p {
-  font-family: 'Noto Sans', sans-serif, serif, monospace;
-  font-size: 2em;
-  line-height: 1.5;
-  color: inherit;
-  font-size: 1.7rem;
   width: 200px;
   position: absolute;
   left: 60px;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 1.7rem;
 }
 
 @media screen and (max-width: 520px) {
