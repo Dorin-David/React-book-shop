@@ -1,16 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
 @import "./colors";
 
-/*
-
-  Text order
-
-  margin/padding
-  font
-  text
-  color
-*/
-
 //text mixin fot Main page
 @mixin main-text($type) {
     @if $type == "title" {

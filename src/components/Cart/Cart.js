@@ -3,7 +3,7 @@ import './Cart.css';
 import { currentDiscount, currentDiscountedElements } from '../Main/Main';
 import { catalog } from '../../utilities/catalog';
 import CartButtons from '../Buttons/CartButtons/CartButtons';
-import Cards from '../Card/Cards/Cards'
+import Cards from '../Card/Cards';
 
 
 const Cart = props => {
