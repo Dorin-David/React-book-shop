@@ -4,7 +4,9 @@ import { Main } from './components/Main/Main';
 import Cart from './components/Cart/Cart';
 import Description from './components/Description/Description';
 import { catalog } from './utilities/catalog';
-import { displayRandomMessage } from './utilities/utilities'
+import { displayRandomMessage } from './utilities/utilities';
+import axios from './axios';
+// import Spinner from './components/UI/Spinner/Spinner';
 
 
 class App extends React.Component {
@@ -18,7 +20,8 @@ class App extends React.Component {
       showDescription: false,
       productsDisplay: 'normal',
       currentDisplayObject: '',
-      currentItems: catalog
+      currentItems: catalog,
+      loading: false
 
     }
     this.addToCart = this.addToCart.bind(this);
@@ -99,6 +102,23 @@ class App extends React.Component {
     }))
   }
 
+  goToCheckout = () => {
+     let items = [...this.state.cart].reduce((accum, book, _, arr) => {
+        if(!accum[book]){
+          accum[book] = 1
+          return accum
+        } else {
+          accum[book]++
+          return accum
+        }
+     }, {})
+
+     axios.post('/orders.json', items)
+     .then(res => console.log(res))
+     .catch(rej => console.log(rej))
+  }
+
+
   render() {
     return (
       <div className='wrapper'>
@@ -116,6 +136,7 @@ class App extends React.Component {
                                  adjustQuantity={this.adjustQuantity} 
                                  fullPage={this.state.cartFullPage}
                                  fullView={this.fullViewCart}
+                                 checkout={this.goToCheckout}
                                  /> : null}
         {this.state.showMessage ? displayRandomMessage() : null}
         {this.state.showDescription ? <Description displayObject={this.state.currentDisplayObject} onClick={this.closeDescription} /> : null}

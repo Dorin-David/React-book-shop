@@ -4,6 +4,7 @@ import { currentDiscount, currentDiscountedElements } from '../Main/Main';
 import { catalog } from '../../utilities/catalog';
 import CartButtons from '../Buttons/CartButtons/CartButtons';
 import Cards from '../Card/Cards';
+import Button from '../UI/Button/Button';
 
 
 const Cart = props => {
@@ -20,7 +21,9 @@ const Cart = props => {
       showDescription={props.showDescription}
       adjustQuantity={props.adjustQuantity}
     />
-    <p id='totalDue'><span>Total: </span>{`${totalDue.toFixed(2)}`}$</p>
+    <p id='totalDue'>
+      <span>Total: </span>{`${totalDue.toFixed(2)}`}$
+      <Button click={props.checkout}/></p>
   </div>
   return (
     <div id='cart-box-wrapper' className={props.fullPage ? 'full-view' : 'normal-view'} >

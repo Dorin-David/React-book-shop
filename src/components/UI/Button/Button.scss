@@ -1,0 +1,19 @@
+@import '../../../style/colors';
+@import '../../../style/layout-mixin';
+
+.default-btn {
+    display: inline-block;
+    margin: 5px;
+    padding: 5px;
+    background-color: rgba(255, 161, 0, 0.9);
+    border: none;
+    border-radius: 4px;
+    font-size: 1.6rem;
+    
+}
+
+.default-btn:hover {
+    cursor: pointer;
+    opacity: 1;
+    color: $shaded-purple;
+}
