@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
+@import '../../../style/colors';
+@import '../../../style/layout-mixin';
+
+
+.default-btn {
+    display: inline-block;
+    margin: 5px;
+    padding: 5px;
+    background-color: rgba(255, 161, 0, 0.9);
+    border: none;
+    border-radius: 4px;
+    font-family: 'Noto Sans', serif;
+    font-size: 2.2rem;
+}
+
+.default-btn:hover {
+    cursor: pointer;
+    opacity: 1;
+    color: white;
+}
+
+.checkout-btn:hover {
+    box-shadow: 1px 2px 2px rgb(243, 209, 14), -1px -2px 2px rgb(243, 209, 14);
+}
+
+.cancel-btn:hover {
+    background: #d9534f;
+}
+
+.checkout-btn:disabled {
+    background: lightgray;
+    color: $shaded-purple;
+}
+
+.checkout-btn:disabled:hover {
+    cursor: not-allowed;
+    box-shadow: initial;
+}

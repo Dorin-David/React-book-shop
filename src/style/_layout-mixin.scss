@@ -5,18 +5,3 @@
     margin: $margin;
     position: $position;
 }
-
-@mixin build-box($width, $height:auto, $color:initial, $margin: initial, $padding: initial){
-    width: $width;
-    height: $height;
-    background: $color;
-    margin: $margin;
-    padding: $padding;  
-}
-
-//default-flex 
-@mixin flex(){
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}

@@ -18,25 +18,21 @@
     justify-content: center;
     padding: 3px 5px;
     background-color: $shaded-purple;
-    input {
-        width: 15%;
-        padding: 7px;
-        border-radius: 5px;
-        font: {
-            family: "Roboto Mono"; /*keep different font here?*/
-            size: 1.3em;
-        }
-    }
+
     #search {
         @include box(400px, 70%);
+        flex: 1 1 400px;
         input {
-            @include box(80%, 100%);
+            @include box(320px, 100%);
+            padding: 7px;
+            border-radius: 5px;
             border: none;
+            font-family: "Roboto Mono";
             font-size: 1.6em;
             color: $shaded-purple;
         }
         button {
-            @include box(10%, 100%);
+            @include box(40px, 100%);
             border: none;
             border-radius: 5px;
             background: inherit;
@@ -55,18 +51,15 @@
             cursor: pointer;
         }
     }
-    #cart {
-        position: absolute;
-        right: 10px;
-        margin-right: 20px;
-        margin-left: 10px;
-        font-size: 3.4em;
-        color: $oranged-yellow;
-        opacity: 0.9;
-       
-    }
-    #cart:hover {
-        cursor: pointer;
-        opacity: 1;
+}
+
+@media (max-width: 450px) {
+    .nav-container  #search {
+        input {
+            width: 75%;
+        }
+        button {
+            width: 30px;
+        }
     }
 }

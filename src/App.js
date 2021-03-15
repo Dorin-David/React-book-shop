@@ -4,7 +4,7 @@ import { Main } from './components/Main/Main';
 import Cart from './components/Cart/Cart';
 import Description from './components/Description/Description';
 import { catalog } from './utilities/catalog';
-import { displayRandomMessage } from './utilities/utilities'
+import { displayRandomMessage } from './utilities/utilities';
 
 
 class App extends React.Component {
@@ -18,7 +18,7 @@ class App extends React.Component {
       showDescription: false,
       productsDisplay: 'normal',
       currentDisplayObject: '',
-      currentItems: catalog
+      currentItems: catalog,
 
     }
     this.addToCart = this.addToCart.bind(this);
@@ -102,7 +102,7 @@ class App extends React.Component {
   render() {
     return (
       <div className='wrapper'>
-        <NavBar onClick={this.toggleCart} handleSearch={this.searchItem} />
+        <NavBar clickCart={this.toggleCart} handleSearch={this.searchItem} {...this.props} />
         <Main 
         catalog={this.state.currentItems} 
         click={this.addToCart} 
@@ -116,6 +116,8 @@ class App extends React.Component {
                                  adjustQuantity={this.adjustQuantity} 
                                  fullPage={this.state.cartFullPage}
                                  fullView={this.fullViewCart}
+                                 {...this.props}
+                                //  checkout={this.goToCheckout}
                                  /> : null}
         {this.state.showMessage ? displayRandomMessage() : null}
         {this.state.showDescription ? <Description displayObject={this.state.currentDisplayObject} onClick={this.closeDescription} /> : null}
