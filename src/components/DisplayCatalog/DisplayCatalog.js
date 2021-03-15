@@ -11,8 +11,8 @@ const DisplayCatalog = props => (
         <div key={`${element.author}_${element.year}`} className={props.display === 'normal' ? 'card' : 'card large'}> 
             <img src={element.img} alt={element.title} key={element.img.match(/.{5}(?=.jpg)/)[0]}
                 onClick={props.showDescription.bind(this, element)} title='view description' /> 
-            <h2 key={element.title}>{element.title}</h2>
-            <h3 key={element.author}>{element.author}</h3>
+            <p className='title' key={element.title}>{element.title}</p>
+            <p className='author' key={element.author}>{element.author}</p>
             <div key={element.price + element.title}>
                 {getDiscount(currentDiscountedElements, element.title, element.price, currentDiscount,
                     props.click.bind(this, element.title))}

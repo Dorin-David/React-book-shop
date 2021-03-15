@@ -56,9 +56,9 @@ function getDiscount(list, target, price, currDiscount, event){
     let copy  = price;
     let button = <FaPlusSquare id='add-btn-main' title='add to cart' onClick={event} style={{verticalAlign: 'bottom'}}/>;
     if(list.includes(target)){   
-        copy = <p><span className='discountedPrice'>{price}</span>{Math.round(price - ((price / 100) * currDiscount))}${button}</p>;  
+        copy = <p className='price'><span className='discountedPrice'>{price}</span>{Math.round(price - ((price / 100) * currDiscount))}${button}</p>;  
     }
-    return typeof copy === 'object' ? copy : <p>{copy}${button}</p>
+    return typeof copy === 'object' ? copy : <p className='price'>{copy}${button}</p>
 }
 
 export {displayRandomMessage, getProperties, getRandomElements, getDiscount}

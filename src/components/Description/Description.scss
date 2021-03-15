@@ -1,6 +1,5 @@
 @import "../../style/colors";
-@import "../../style/mixins";
-@import "../../style/layout-mixin";
+@import "../../style/text";
 
 .description-wrapper {
     @include box(70%, 60vh, 10px auto, fixed);
@@ -26,19 +25,14 @@
                 0px -2px 1px rgba(107, 103, 103, 0.5), -2px -2px 1px rgba(107, 103, 103, 0.5);
         }
         #title-description {
-            @include font(header, 3rem, #1b1b1b);
-            text-shadow: 1px 1px 1px lightgray;
-            text-align: center;
+            @include description-text(title);
         }
 
         #author {
-            @include font(header, 2.4rem, $dark-grayish);
-            text-align: center;
+            @include description-text(author);
         }
         p {
-            @include font(paragraph);
-            font-size: 1.6rem;
-            line-height: 1.4;
+            @include description-text(description);
         }
         #description-close-btn {
             position: absolute;
