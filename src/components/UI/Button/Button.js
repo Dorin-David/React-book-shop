@@ -3,9 +3,10 @@ import './Button.css';
 
 const button = props => (
     <button 
-    className='default-btn'
+    className={['default-btn', props.btnClass].join(' ')}
     onClick={props.click}
-    >Checkout</button>
+    disabled={props.disabled}
+    >{props.children}</button>
 )
 
 export default button

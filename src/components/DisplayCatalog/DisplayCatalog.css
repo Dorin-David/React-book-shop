@@ -1,32 +1,4 @@
-/*
- ORDER for properties
- ! mixins
-  1) width/height
-  2) display (and other related rules)
-  2.5) position (and other related rules)
-  3) margin/padding
-  4) background
-  5) border
-  6) color
-  7) children
-
-  Text
-
-  margin/padding
-  font
-  text
-  color
-*/
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
-/*
-
-  Text order
-
-  margin/padding
-  font
-  text
-  color
-*/
 .card {
   width: 300px;
   height: 400px;
@@ -121,7 +93,7 @@ img:hover {
 
 @media screen and (max-width: 1040px) {
   .main-container #books-container .card.large {
-    margin: 10px auto;
+    margin: 20px auto;
   }
   .main-container #books-container .card.large img {
     min-width: 200px;
@@ -138,7 +110,7 @@ img:hover {
   .main-container #books-container .card.large {
     width: 300px;
     height: 400px;
-    margin: initial;
+    margin: 20px 10px;
     position: initial;
   }
 }

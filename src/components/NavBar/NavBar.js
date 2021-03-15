@@ -1,6 +1,7 @@
 import React from 'react';
 import './NavBar.css';
-import { FaShoppingCart, FaSearch } from 'react-icons/fa';
+import { FaSearch } from 'react-icons/fa';
+import NavButtons from '../Buttons/NavButtons/NavButtons';
 
 const NavBar = (props) => {
     return (
@@ -9,7 +10,10 @@ const NavBar = (props) => {
                 <input type='text' placeholder='search book/author' onChange={props.handleSearch} value={props.value} />
                 <button type="submit"><FaSearch className='search-icon' onClick={props.handleSearch} title='search' /></button>
             </div>
-            <FaShoppingCart id='cart' onClick={props.onClick} title='open cart' />
+            <NavButtons
+                clickCart={props.clickCart}
+                clickOrders={() => props.history.replace('/orders')}
+            />
         </div>
     )
 }
