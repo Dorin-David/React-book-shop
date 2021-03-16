@@ -24,6 +24,7 @@
         flex: 1 1 400px;
         input {
             @include box(320px, 100%);
+            margin-left: 10px;
             padding: 7px;
             border-radius: 5px;
             border: none;

@@ -1,0 +1,35 @@
+@import "../../style/colors";
+@import "../../style/layout-mixin";
+@import "../../style/text";
+
+.order-summary {
+    min-width: 450px;
+    margin: 7px;
+    height: auto;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+}
+
+.order-info {
+    @include box(100%, 70px);
+    min-width: 450px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background: #f6f6f6;
+    border-bottom: 2px solid lightgray;
+    > * {
+        margin-left: 15px;
+    }
+    p,
+    span {
+        flex: 0 0 auto;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        color: $orders-summary;
+    }
+    p {
+        text-align: center;
+        font-weight: 600;
+    }
+}

@@ -34,6 +34,11 @@
         cursor: pointer;
         opacity: 1;
     }
+    img:hover {
+        cursor: pointer;
+        box-shadow: 0px 2px 1px rgba(107, 103, 103, 0.5), 2px 0px 1px rgba(107, 103, 103, 0.5),
+            0px -2px 1px rgba(107, 103, 103, 0.5), -2px -2px 1px rgba(107, 103, 103, 0.5);
+    }
 }
 .card.large {
     @include box(400px, 500px, 10px 20px);
@@ -50,13 +55,14 @@
     #add-btn-main {
         font-size: 3rem;
     }
+    img:hover {
+        cursor: pointer;
+        box-shadow: 0px 2px 1px rgba(107, 103, 103, 0.5), 2px 0px 1px rgba(107, 103, 103, 0.5),
+            0px -2px 1px rgba(107, 103, 103, 0.5), -2px -2px 1px rgba(107, 103, 103, 0.5);
+    }
 }
 
-img:hover {
-    cursor: pointer;
-    box-shadow: 0px 2px 1px rgba(107, 103, 103, 0.5), 2px 0px 1px rgba(107, 103, 103, 0.5),
-        0px -2px 1px rgba(107, 103, 103, 0.5), -2px -2px 1px rgba(107, 103, 103, 0.5);
-}
+
 
 //fix media below
 @media screen and (max-width: 1040px) {

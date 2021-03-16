@@ -1,0 +1,47 @@
+.order-card {
+  width: 300px;
+  height: auto;
+  margin: 5px 10px;
+  position: initial;
+  padding: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.order-card img {
+  display: inline-block;
+  -webkit-box-shadow: 0px 2px 1px rgba(107, 103, 103, 0.5), 2px 0px 1px rgba(107, 103, 103, 0.5), 0px -2px 1px rgba(107, 103, 103, 0.5), -2px -2px 1px rgba(107, 103, 103, 0.5);
+          box-shadow: 0px 2px 1px rgba(107, 103, 103, 0.5), 2px 0px 1px rgba(107, 103, 103, 0.5), 0px -2px 1px rgba(107, 103, 103, 0.5), -2px -2px 1px rgba(107, 103, 103, 0.5);
+}
+
+.order-card .order-card-info {
+  display: inline-block;
+  width: 150px;
+}
+
+.order-card .order-card-info .title, .order-card .order-card-info .author, .order-card .order-card-info .qty {
+  text-align: center;
+}
+
+.order-card .order-card-info .title {
+  font-size: 1.8rem;
+  color: #673F4C;
+}
+
+.order-card .order-card-info .author {
+  font-size: 1.6rem;
+  color: #3f3937;
+}
+
+.order-card .order-card-info .qty {
+  font-size: 1.4rem;
+  color: #565959;
+}
+/*# sourceMappingURL=OrderCard.css.map */
