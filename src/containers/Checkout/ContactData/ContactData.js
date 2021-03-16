@@ -103,6 +103,7 @@ class ContactData extends Component {
         const currentOrder = {
             books: this.props.books,
             price: this.props.price.toFixed(2),
+            date: new Date(),
             orderData: formData
         }
         axios.post('/orders.json', currentOrder)

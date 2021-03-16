@@ -10,20 +10,23 @@ import Button from '../UI/Button/Button';
 class Cart extends Component {
 
   componentDidMount() {
-    console.log(this.props)
+
   }
 
   goToCheckout = () => {
+    const authors = {}
+
     let totalDue = this.props.cart.reduce((acc, curr) => {
       let target = catalog.find(el => el.title === curr);
+      authors[target.title] = target.author;
       let targetPrice = target.price;
       if (currentDiscountedElements.includes(target.title)) { targetPrice = Math.round(targetPrice - ((targetPrice / 100) * currentDiscount)) }
       return acc + targetPrice
     }, 0)
 
-    let items = [...this.props.cart].reduce((accum, book, _, arr) => {
+    let items = [...this.props.cart].reduce((accum, book) => {
       if (!accum[book]) {
-        accum[book] = 1
+        accum[book] = 1;
         return accum
       } else {
         accum[book]++
@@ -32,7 +35,7 @@ class Cart extends Component {
     }, {});
     let books = [];
     for (let book in items) {
-      books.push(encodeURIComponent(book) + '=' + encodeURIComponent(items[book]))
+      books.push(encodeURIComponent(book) + '=' + encodeURIComponent(items[book]) + ' ' + encodeURIComponent(authors[book].replace(' ', '_')))
     }
     books.push('totalPrice=' + encodeURIComponent(totalDue.toFixed(2)))
 

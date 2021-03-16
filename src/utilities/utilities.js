@@ -61,4 +61,11 @@ function getDiscount(list, target, price, currDiscount, event){
     return typeof copy === 'object' ? copy : <p className='price'>{copy}${button}</p>
 }
 
-export {displayRandomMessage, getProperties, getRandomElements, getDiscount}
+
+function getReadableDate(date){
+    const dayMonthYear = date.slice(0, 10).split('-').reverse().join('-');
+    const hourMinutesSeconds = date.slice(11, 19);
+    return dayMonthYear + ' ' + hourMinutesSeconds
+}
+
+export {displayRandomMessage, getProperties, getRandomElements, getDiscount, getReadableDate}

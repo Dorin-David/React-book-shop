@@ -1,0 +1,38 @@
+@import '../../../style/layout-mixin';
+@import '../../../style/colors';
+
+
+.order-card {
+    @include box(300px, auto, 5px 10px);
+    padding: 5px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    img {
+        display: inline-block;
+        box-shadow: 0px 2px 1px rgba(107, 103, 103, 0.5), 2px 0px 1px rgba(107, 103, 103, 0.5),
+            0px -2px 1px rgba(107, 103, 103, 0.5), -2px -2px 1px rgba(107, 103, 103, 0.5);
+    }
+    .order-card-info {
+        display: inline-block;
+        width: 150px;
+        
+
+        .title, .author, .qty {
+            text-align: center;
+            
+        }
+        .title {
+            font-size: 1.8rem;
+            color: $shaded-purple;
+        }
+        .author {
+            font-size: 1.6rem;
+            color: $author;
+        }
+        .qty {
+            font-size: 1.4rem;
+            color: $orders-summary;
+        }
+    }
+}
