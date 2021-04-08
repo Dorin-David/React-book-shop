@@ -43,10 +43,6 @@ class Cart extends Component {
       pathname: '/checkout',
       search: '?' + books.join('&')
     })
-    //  axios.post('/orders.json', items)
-    //  .then(res => console.log(res))
-    //  .catch(rej => console.log(rej))
-    //  this.props.history.push('/checkout')
   }
 
   render() {
@@ -85,37 +81,6 @@ class Cart extends Component {
   }
 
 }
-
-// const Cart = this.props => {
-//   let totalDue = this.props.cart.reduce((acc, curr) => {
-//     let target = catalog.find(el => el.title === curr);
-//     let targetPrice = target.price;
-//     if (currentDiscountedElements.includes(target.title)) { targetPrice = Math.round(targetPrice - ((targetPrice / 100) * currentDiscount)) }
-//     return acc + targetPrice
-//   }, 0)
-
-//   let productsAndTotal = <div style={{ width: '100%', height: '100%' }}>
-//     <Cards
-//       cart={this.props.cart}
-//       showDescription={this.props.showDescription}
-//       adjustQuantity={this.props.adjustQuantity}
-//     />
-//     <p id='totalDue'>
-//       <span>Total: </span>{`${totalDue.toFixed(2)}`}$
-//       <Button click={this.props.checkout}/></p>
-//   </div>
-//   return (
-//     <div id='cart-box-wrapper' className={this.props.fullPage ? 'full-view' : 'normal-view'} >
-//       <CartButtons
-//         clickFull={this.props.fullView}
-//         clickClose={this.props.clickToggle}
-//       />
-//       <div id='inner-cart-box'>
-//         {totalDue ? productsAndTotal : <p id='empty-cart-message'>You have currently no items in the cart</p>}
-//       </div>
-//     </div>
-//   )
-// }
 
 export default Cart
 
