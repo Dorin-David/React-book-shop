@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
+.confirm-order-modal {
+  width: 50%;
+  height: 300px;
+  margin: 50px auto;
+  position: initial;
+  padding: 10px;
+  background-color: white;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+}
+
+.confirm-order-modal h1 {
+  font-family: "Noto Sans", sans-serif;
+  font-weight: bold;
+  font-size: 2.2em;
+  text-align: center;
+  color: #673F4C;
+  font-size: 3.5rem;
+}
+
+.confirm-order-modal p {
+  font-family: "Noto Sans", sans-serif;
+  font-weight: bold;
+  font-size: 1.8em;
+  text-align: center;
+  color: #3f3937;
+  margin-top: 10px;
+}
+/*# sourceMappingURL=order-confirm.css.map */

@@ -4,7 +4,6 @@ import Spinner from '../../../components/UI/Spinner/Spinner';
 import './ContactData.css';
 import axios from '../../../axios-orders';
 import Input from '../../../components/UI/Input/Input';
-// import './ContactData.css';
 
 class ContactData extends Component {
     state = {
@@ -109,7 +108,7 @@ class ContactData extends Component {
         axios.post('/orders.json', currentOrder)
             .then(res => {
                 this.setState({ loading: false })
-                this.props.history.push('/')
+                this.props.history.push('/order-confirm')
             })
             .catch(rej => {
                 this.setState({ loading: false })

@@ -31,6 +31,10 @@ class Orders extends Component {
             })
     }
 
+    componentWillUnmount(){
+        this.props.history.push('/')
+    }
+
     render() {
 
         let orders = (<div>
