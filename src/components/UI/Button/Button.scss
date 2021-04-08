@@ -12,12 +12,14 @@
     border-radius: 4px;
     font-family: 'Noto Sans', serif;
     font-size: 2.2rem;
+    transition: transform 200ms ease-in;
 }
 
 .default-btn:hover {
     cursor: pointer;
     opacity: 1;
     color: white;
+    transform: scale(1.1);
 }
 
 .checkout-btn:hover {
@@ -25,12 +27,21 @@
 }
 
 .cancel-btn:hover {
-    background: #d9534f;
+    background: $redish;
+    transform: initial;
+}
+
+.redirect-btn {
+    display: block;
+    margin: 70px auto;
+    font-size: 3rem;
+
 }
 
 .checkout-btn:disabled {
     background: lightgray;
     color: $shaded-purple;
+    transform: initial;
 }
 
 .checkout-btn:disabled:hover {
