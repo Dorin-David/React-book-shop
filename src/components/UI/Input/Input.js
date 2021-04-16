@@ -41,7 +41,6 @@ const input = props => {
             break;
     }
 
-    //fix below, input should be within label
     return (<div className='Input'>
         <label className='Label'>
             {inputElement}

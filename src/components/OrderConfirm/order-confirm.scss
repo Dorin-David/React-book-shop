@@ -4,10 +4,7 @@
 
 .confirm-order-modal {
    @include box(50%, 300px, 50px auto);
-   padding: 10px;
-   background-color: white;
-   border: 2px solid #ccc;
-   border-radius: 4px;
+   
    h1 {
        @include main-text(title);
        font-size: 3.5rem;
