@@ -9,7 +9,7 @@ const Checkout = (props) => {
 
   useEffect(() => {
       //switch URL querying with useContext
-    const booksFromParams = new URLSearchParams(this.props.location.search);
+    const booksFromParams = new URLSearchParams(props.location.search);
     const parsedBooks = {};
     let totalPrice = null;
     for (let [key, qty] of booksFromParams.entries()) {
@@ -20,14 +20,13 @@ const Checkout = (props) => {
       }
     }
     setOrderState({ books: parsedBooks, totalPrice: totalPrice });
-  }, []);
+  }, [props.location.search]);
 
   return (
     <div>
       <ContactData
         books={orderState.books}
         price={+orderState.totalPrice}
-        click={this.goToCheckout}
         {...props}
       />
     </div>
