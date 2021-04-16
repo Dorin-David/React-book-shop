@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 import NavBar from '../../components/NavBar/NavBar';
 import { Main } from '../../components/Main/Main';
 import Cart from '../../components/Cart/Cart';
@@ -7,126 +7,101 @@ import { catalog } from '../../utilities/catalog';
 import { displayRandomMessage } from '../../utilities/utilities';
 
 
-class Shop extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      cart: [],
-      toggleCart: false,
-      cartFullPage: false,
-      showMessage: false,
-      showDescription: false,
-      productsDisplay: 'normal',
-      currentDisplayObject: '',
-      currentItems: catalog,
+const Shop = props => {
 
+    const [cart, setCart] = useState([]);
+    const [cartView, setCartView] = useState({ toggleCart: false, cartFullPage: false });
+    const [showMessage, setShowMessage] = useState(false);
+    const [productsDisplay, setProductDisplay] = useState('normal');
+    const [description, setDescription] = useState({ showDescription: false, currentDisplayObject: '' });
+    const [currentDisplayedItems, setCurrentDisplayedItems] = useState(catalog)
+
+    const addToCart = element => {
+        setCart(cart => [...cart, element])
+
+        if (showMessage === true) return
+        setShowMessage(message => !message)
+        setTimeout(() => setShowMessage(message => !message), 1500);
     }
-    this.addToCart = this.addToCart.bind(this);
-    this.toggleCart = this.toggleCart.bind(this);
-    this.fullViewCart = this.fullViewCart.bind(this);
-    this.showDescription = this.showDescription.bind(this);
-    this.closeDescription = this.closeDescription.bind(this);
-    this.searchItem = this.searchItem.bind(this);
-  }
 
-  addToCart(element) {
-    this.setState(state => ({
-      cart: [...state.cart, element],
-    }))
-    if (this.state.showMessage === true) return
-    this.setState(state => ({
-      showMessage: !state.showMessage
-    }))
-    setTimeout(() => this.setState(state => ({
-      showMessage: !state.showMessage
-    })), 1500);
-  }
-
-  adjustQuantity = (key, target) => {
-    if (key === 'add') {
-      return this.setState(state => ({
-        cart: [...state.cart, target]
-      }));
+    const adjustQuantity = (key, target) => {
+        if (key === 'add') {
+            return setCart(cart => [...cart, target])
+        }
+        if (key === 'remove') {
+            let shallowCopy = Array.from(cart).filter((element, index, arr) => index !== arr.lastIndexOf(target))
+            return setCart(cart => shallowCopy)
+        }
+        if (key === 'delete') {
+            return setCart(cart => cart.filter(el => el !== target))
+        }
     }
-    if (key === 'remove') {
-      let shallowCopy = Array.from(this.state.cart).filter((element, index, arr) => index !== arr.lastIndexOf(target))
-      return this.setState(state => ({
-        cart: shallowCopy
-      }))
+
+    const toggleCart = () => {
+        setCartView(state => ({
+            toggleCart: !state.toggleCart,
+            cartFullPage: false
+        }))
     }
-    if (key === 'delete') {
-      return this.setState(state => ({
-        cart: [...state.cart.filter(el => el !== target)]
-      }))
+
+    const fullViewCart = () => {
+        setCartView(state => ({
+            ...state,
+            cartFullPage: !state.cartFullPage
+        }))
     }
-  }
 
-  toggleCart() {
-    this.setState(state => ({
-      toggleCart: !state.toggleCart,
-      cartFullPage: false
-    }))
-  }
+    const showDescription = target => {
+        setDescription(state => ({
+            showDescription: true,
+            currentDisplayObject: target
+        }))
+    }
 
-  fullViewCart() {
-    this.setState(state => ({
-      cartFullPage: !state.cartFullPage
-    }))
-  }
+    const closeDescription = () => {
+        setDescription(state => ({
+            ...state,
+            showDescription: false
+        }))
+    }
 
-  showDescription(target) {
-    this.setState(state => ({
-      showDescription: true,
-      currentDisplayObject: target
-    }))
-  }
-  closeDescription() {
-    this.setState(() => ({ showDescription: false }))
-  }
+    const handleProductsDisplay = size => {
+        setProductDisplay(size)
+    }
 
-  handleProductsDisplay = size => {
-    this.setState(() => ({
-      productsDisplay: size
-  }))
-  }
+    const searchItem = e => {
+        let value = e.target.value;
+        let regex = new RegExp(`${value}`, 'i');
+        if (value === '') {
+            return setCurrentDisplayedItems(catalog)
+        }
+        setCurrentDisplayedItems(state => currentDisplayedItems.filter(element => regex.test(element.title) || regex.test(element.author)))
+    }
 
-  searchItem(e) {
-    let value = e.target.value;
-    let regex = new RegExp(`${value}`, 'i');
-    if (value === '') { return this.setState(state => ({ currentItems: catalog })) }
-    this.setState(state => ({
-      currentItems: [...state.currentItems.filter(element => regex.test(element.title) || regex.test(element.author))]
-    }))
-  }
 
-  render() {
     return (
-      <div className='wrapper'>
-        <NavBar clickCart={this.toggleCart} handleSearch={this.searchItem} {...this.props} />
-        <Main 
-        catalog={this.state.currentItems} 
-        click={this.addToCart} 
-        display={this.state.productsDisplay}
-        displayProducts={this.handleProductsDisplay}
-        showDescription={this.showDescription} />
-        {this.state.toggleCart ? <Cart 
-                                 clickToggle={this.toggleCart}  
-                                 showDescription={this.showDescription} 
-                                 cart={this.state.cart} 
-                                 adjustQuantity={this.adjustQuantity} 
-                                 fullPage={this.state.cartFullPage}
-                                 fullView={this.fullViewCart}
-                                 {...this.props}
-                                //  checkout={this.goToCheckout}
-                                 /> : null}
-        {this.state.showMessage ? displayRandomMessage() : null}
-        {this.state.showDescription ? <Description displayObject={this.state.currentDisplayObject} onClick={this.closeDescription} /> : null}
-      </div>
+        <div className='wrapper'>
+            <NavBar clickCart={toggleCart} handleSearch={searchItem} {...props} />
+            <Main
+                catalog={currentDisplayedItems}
+                click={addToCart}
+                display={productsDisplay}
+                displayProducts={handleProductsDisplay}
+                showDescription={showDescription} />
+            {cartView.toggleCart ? <Cart
+                clickToggle={toggleCart}
+                showDescription={showDescription}
+                cart={cart}
+                adjustQuantity={adjustQuantity}
+                fullPage={cartView.cartFullPage}
+                fullView={fullViewCart}
+                {...props}
+            /> : null}
+            {showMessage ? displayRandomMessage() : null}
+            {description.showDescription ? <Description displayObject={description.currentDisplayObject} onClick={closeDescription} /> : null}
+        </div>
     )
-  }
 }
-
-
 
 
 export default Shop;
