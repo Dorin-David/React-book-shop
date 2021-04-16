@@ -8,7 +8,7 @@ const Checkout = (props) => {
   });
 
   useEffect(() => {
-      //switch URL querying with useContext
+    //switch URL querying with useContext
     const booksFromParams = new URLSearchParams(props.location.search);
     const parsedBooks = {};
     let totalPrice = null;
