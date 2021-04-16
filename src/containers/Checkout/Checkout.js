@@ -1,38 +1,36 @@
-import { Component } from "react";
-import ContactData from './ContactData/ContactData';
+import { useState, useEffect } from "react";
+import ContactData from "./ContactData/ContactData";
 
-class Checkout extends Component {
-    state = {
-        books: null,
-        totalPrice: null
+const Checkout = (props) => {
+  const [orderState, setOrderState] = useState({
+    books: null,
+    totalPrice: null,
+  });
+
+  useEffect(() => {
+    //switch URL querying with useContext
+    const booksFromParams = new URLSearchParams(props.location.search);
+    const parsedBooks = {};
+    let totalPrice = null;
+    for (let [key, qty] of booksFromParams.entries()) {
+      if (key === "totalPrice") {
+        totalPrice = qty;
+      } else {
+        parsedBooks[key] = qty;
+      }
     }
+    setOrderState({ books: parsedBooks, totalPrice: totalPrice });
+  }, [props.location.search]);
 
-    componentDidMount() {
-        let booksFromParams = new URLSearchParams(this.props.location.search);
-        let parsedBooks = {};
-        let totalPrice = null;
-        for (let [key, qty] of booksFromParams.entries()) {
-            if (key === 'totalPrice') {
-                totalPrice = qty;
-            } else {
-                parsedBooks[key] = qty
-            }
+  return (
+    <div>
+      <ContactData
+        books={orderState.books}
+        price={+orderState.totalPrice}
+        {...props}
+      />
+    </div>
+  );
+};
 
-        }
-        this.setState({ books: parsedBooks, totalPrice: totalPrice })
-    }
-
-    render() {
-        return (
-            <div>
-                <ContactData 
-                books={this.state.books} 
-                price={+this.state.totalPrice} 
-                click={this.goToCheckout}
-                {...this.props} />
-            </div>
-        )
-    }
-}
-
-export default Checkout
+export default Checkout;

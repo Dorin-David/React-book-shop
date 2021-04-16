@@ -4,10 +4,6 @@
   height: 300px;
   margin: 50px auto;
   position: initial;
-  padding: 10px;
-  background-color: white;
-  border: 2px solid #ccc;
-  border-radius: 4px;
 }
 
 .confirm-order-modal h1 {
